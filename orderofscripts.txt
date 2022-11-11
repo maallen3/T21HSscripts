@@ -1,0 +1,116 @@
+
+####ATAC
+Chipflow Nextflow for ATAC
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows/ATACdata_todm6.sh
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows/ATACdata_tohg38.sh
+
+#merge teachincal replicates of rep 2 and symlink rep1
+
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/mergereplicatesandlink/runallrootnames_dro.sh
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/mergereplicatesandlink/runallrootnames.sh
+	Both of these run
+	/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/mergereplicatesandlink/makemergeandlink.sbatch
+
+
+
+Move bams to bigwigs and bedgraphs via nextflow
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows/ATACdm6_tobedgraphsbigwigs.sh
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows/TAChg38_tobedgraphsbigwigs.sh
+
+had to re index and relink the dro bams becuase bai files were made at same minute and HMMRATAC didn't lkke that.
+
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/samtoolsreindex/rundirectory.sh
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/mergereplicatesandlink/relinkallrootnames_dro.sh
+
+
+draw genes
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/gene_figures/pyGenomeTracks_hspb1.sbatch
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/gene_figures/pyGenomeTracks_serpinh1.sbatch
+
+Run HMMRATAC
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/HMMRATACscripts/rundirectory.sh (not done)
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/HMMRATACscripts/rundirectory2.sh
+which runs HMMRATACandsort_python.sh which runs HMMRARACopen.py
+
+
+Run peaks through TFEA
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/ATAC_TFEA/ATAC_TFEA_Erichs.sh
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/ATAC_TFEA/ATAC_TFEA_Ethans.sh
+
+
+scatter plot TFEA from Ethan vs Eric
+https://fiji-viz.colorado.edu/jupyterhub/user/allenma/notebooks/heatshock/TFEA_results_for_figures.ipynb
+
+Run mumerge
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/ATACseq_roi_diffexp/runmumerge.sbatch
+
+RUN deseq on peaks
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/ATACseq_roi_diffexp/featurecounts.R
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/ATACseq_roi_diffexp/Deseq2.R
+
+
+Run bedtools to get genes near differntail peaks
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/ATACseq_roi_diffexp/diffpeaksneargenes.sh
+
+Run genes through GEO to show both have HS genes
+*Manuel
+
+enrichheatmap
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/enrichheatmap/enrichheatmap_atac.R
+
+####PRO
+
+Nascentflow Nextflow for PRO (done)
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows/PROdata_todm6.sh
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows/PROdata_tohg38.sh (running)
+
+
+Move crams to bams and bigwigs and bedgraphs via nextflow (done)
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows/PROhg38_tobedgraphsbigwigs.sh (running)
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows/PROdm6_tobedgraphsbigwigs.sh
+
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/samtoolsreindex/rundirectory.sh
+
+
+draw genes for figure (done)
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/gene_figures/PROpyGenomeTracks_hspb1.sbatch
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/gene_figures/PROpyGenomeTracks_serpinh1.sbatch
+
+RUN deseq on genes (done)
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PROseq_gene_diffexp/featurecounts_body.R
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PROseq_gene_diffexp/Deseq2_body.R
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PROseq_gene_diffexp/PROseq_genes_that_respond_to_heatshock.ipynb
+https://fiji-viz.colorado.edu/jupyterhub/user/allenma/notebooks/heatshock/PROseq_genes_that_respond_to_heatshock.ipynb
+
+
+run tfit to find eRNAs (done)
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/Tfit/runbidirflow.sh
+
+run tfea on tfit output (running)
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PRO_TFEA/PRO_TFEA_Erics.sh
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PRO_TFEA/PRO_TFEA_Ethans.sh
+
+scatter plot TFEA from Ethan vs Eric (not done)
+https://fiji-viz.colorado.edu/jupyterhub/user/allenma/notebooks/heatshock/TFEA_results_for_figures.ipynb
+
+run mumerge on tfit
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PROseq_roi/runmumerge.sbatch
+
+run deseq on mumerge
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PROseq_roi_diffexp/mumerge_to_saf.R
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PROseq_roi_diffexp/countsaf.R
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PROseq_roi_diffexp/deseq.R
+
+run TFEA on mumerge from Tfit ranked by deseq in each person
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PRO_TFEA/PRO_TFEA_Eric_HOCOMOCO10_via_rank.sh
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PRO_TFEA/PRO_TFEA_HOCOMOCO11_Ethans.sh
+
+enrichheatmap
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/enrichheatmap/enrichheatmap_atac_pro_forfig.R
+
+
+### Single cell
+#using Joe's premade matrix files
+#notebook that makes the graphs
+https://fiji-viz.colorado.edu/jupyterhub/user/allenma/notebooks/heatshock/HS_singlecell.ipynb
+

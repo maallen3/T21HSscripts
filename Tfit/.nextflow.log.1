@@ -1,0 +1,251 @@
+Sep-02 09:52:40.925 [main] DEBUG nextflow.cli.Launcher - $> nextflow run /Shares/down/heatshock/analysis_June2022/scripts/Bidirectional-Flow/main.nf -profile hg38 --crams /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/ --workdir /Shares/down/PRO/temp2/ --singleEnd --tfit_split_model --savebidirs --outdir /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/bidir/
+Sep-02 09:52:41.045 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.4
+Sep-02 09:52:41.142 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /Shares/down/heatshock/analysis_June2022/scripts/Bidirectional-Flow/nextflow.config
+Sep-02 09:52:41.147 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Shares/down/heatshock/analysis_June2022/scripts/Bidirectional-Flow/nextflow.config
+Sep-02 09:52:41.187 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `hg38`
+Sep-02 09:52:42.641 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [mm10_lysa8537, dm6_rusi2317, hg38, dm6_lysa8537, mm10_rusi2317, mm10, dm6, hg38_lysa8537, hg38_rusi2317, example]
+Sep-02 09:52:42.688 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 by probing script field
+Sep-02 09:52:42.747 [main] INFO  nextflow.cli.CmdRun - Launching `/Shares/down/heatshock/analysis_June2022/scripts/Bidirectional-Flow/main.nf` [special_yonath] DSL1 - revision: d6d9ca4d1d
+Sep-02 09:52:42.773 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/Users/allenma/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Sep-02 09:52:42.775 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Sep-02 09:52:42.795 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Sep-02 09:52:42.797 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Sep-02 09:52:42.803 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Sep-02 09:52:42.820 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Sep-02 09:52:42.927 [main] DEBUG nextflow.Session - Session uuid: 058c2469-0167-4847-b6ca-03067fdf8232
+Sep-02 09:52:42.928 [main] DEBUG nextflow.Session - Run name: special_yonath
+Sep-02 09:52:42.929 [main] DEBUG nextflow.Session - Executor pool size: 64
+Sep-02 09:52:42.975 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.4 build 5706
+  Created: 19-06-2022 20:51 UTC (14:51 MDT)
+  System: Linux 3.10.0-1160.59.1.el7.x86_64
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 1.8.0_292-b10
+  Encoding: UTF-8 (UTF-8)
+  Process: 56776@fijinode-02 [10.224.32.22]
+  CPUs: 64 - Mem: 503.7 GB (439.6 GB) - Swap: 32 GB (30.8 GB)
+Sep-02 09:52:43.046 [main] DEBUG nextflow.Session - Work-dir: /Shares/down/PRO/temp2 [nfs]
+Sep-02 09:52:43.074 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Sep-02 09:52:43.091 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Sep-02 09:52:43.231 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Sep-02 09:52:43.253 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Sep-02 09:52:43.412 [main] DEBUG nextflow.Session - Session start invoked
+Sep-02 09:52:43.421 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/bidir/pipeline_info/bidir_pipeline_trace.txt
+Sep-02 09:52:45.985 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Sep-02 09:52:46.021 [main] INFO  nextflow.Nextflow - =======================================================
+Bidirectional-Flow v0.3"
+=======================================================
+Sep-02 09:52:46.034 [main] INFO  nextflow.Nextflow - Pipeline Name  : Bidirectional-Flow
+Help Message   : false
+Pipeline Version: 0.3
+Run Name       : special_yonath
+Crams          : /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/
+Genome Ref     : /scratch/Shares/dowell/genomes/hg38/hg38.fa
+Data Type      : Single-End
+Five prime read: Read 2 or single end
+Output dir     : /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/bidir/
+FStitch        : NO
+Tfit           : NO
+Tfit prelim    : NO
+Tfit model     : NO
+Tfit split model: YES
+Tfit prelim files: NO
+Process Tfit prelims: YES
+dREG           : NO
+dREG postprocess: NO
+Gene counting  : NO
+Bidir counting : NO
+Save bidir stats: YES
+Save bamfiles  : NO
+Save Tfit bamfiles: NO
+Save bedgraphs : NO
+Save bigwigs   : NO
+Save bidir subsets: YES
+Working dir    : /Shares/down/PRO/temp2
+Container Engine: null
+Current home   : /Users/allenma
+Current user   : allenma
+Current path   : /Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/Tfit
+Script dir     : /Shares/down/heatshock/analysis_June2022/scripts/Bidirectional-Flow
+Config Profile : hg38
+Sep-02 09:52:46.057 [main] INFO  nextflow.Nextflow - =======================================================
+Sep-02 09:52:46.062 [main] INFO  nextflow.script.BaseScript - 
+STARTING PIPELINE
+Sep-02 09:52:46.064 [main] INFO  nextflow.script.BaseScript - [Log 0]: Getting software versions
+Sep-02 09:52:46.181 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.181 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.199 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Sep-02 09:52:46.210 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Sep-02 09:52:46.216 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Sep-02 09:52:46.677 [main] INFO  nextflow.script.BaseScript - [Log 0]: Software versions complete
+Sep-02 09:52:46.682 [main] INFO  nextflow.script.BaseScript - [Log 1]: Converting CRAM files to BAM files
+Sep-02 09:52:46.682 [main] INFO  nextflow.script.BaseScript - [Log 1]: Genome file being used ..... /scratch/Shares/dowell/genomes/hg38/hg38.fa 
+Sep-02 09:52:46.682 [main] INFO  nextflow.script.BaseScript - [Log 1]: Cram file directory ........ /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/
+Sep-02 09:52:46.683 [main] INFO  nextflow.script.BaseScript - [Log 1]: Working directory ... /Shares/down/PRO/temp2/
+Sep-02 09:52:46.683 [main] INFO  nextflow.script.BaseScript - [Log 1]: Output directory ... /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/bidir/
+Sep-02 09:52:46.813 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.814 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.839 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.839 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.844 [main] INFO  nextflow.script.BaseScript - [Log 1]: Bam files are ready
+
+Sep-02 09:52:46.849 [main] INFO  nextflow.script.BaseScript - [Log 2]: Generating BEDGRAPHS for TFit and FStitch
+Sep-02 09:52:46.850 [main] INFO  nextflow.script.BaseScript - [Log 2]: Genome information ..... /scratch/Shares/dowell/genomes/hg38/hg38.fa 
+Sep-02 09:52:46.865 [main] INFO  nextflow.script.BaseScript - [Log 2]: Chromosome Sizes ....... /scratch/Shares/dowell/genomes/hg38/hg38.chrom.sizes
+Sep-02 09:52:46.875 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.876 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.884 [main] INFO  nextflow.script.BaseScript - [Log 2]: Bedgraph files have been generated
+
+Sep-02 09:52:46.888 [main] INFO  nextflow.script.BaseScript - [Log 3]: Running FStitch
+Sep-02 09:52:46.889 [main] INFO  nextflow.script.BaseScript - [Log 3]: FStitch training file .. /scratch/Shares/dowell/FStitch/train/hg38_train.bed
+Sep-02 09:52:46.889 [main] INFO  nextflow.script.BaseScript - [Log 3]: FStich source code ..... /scratch/Shares/dowell/FStitch/src/FStitch
+Sep-02 09:52:46.900 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.900 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.908 [main] INFO  nextflow.script.BaseScript - [Log 3]: Done Running FStitch
+
+Sep-02 09:52:46.909 [main] INFO  nextflow.script.BaseScript - [Log 4a]: Running Tfit prelim
+Sep-02 09:52:46.914 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.914 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.918 [main] INFO  nextflow.script.BaseScript - [Log 4a]: Done Running Tfit prelim
+
+Sep-02 09:52:46.933 [main] INFO  nextflow.script.BaseScript - [Log 4b]: Processing prelim file for split model run
+Sep-02 09:52:46.940 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.940 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.947 [main] INFO  nextflow.script.BaseScript - [Log 4b]: Running Tfit model on <5kb prelim regions (maxk=2)
+Sep-02 09:52:46.952 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.952 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.959 [main] INFO  nextflow.script.BaseScript - [Log 4b]: Running Tfit model on 5-10kb prelim regions (maxk=5)
+Sep-02 09:52:46.963 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.963 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.979 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.979 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.982 [main] INFO  nextflow.script.BaseScript - [Log 4b]: Done Running Tfit model
+
+Sep-02 09:52:46.984 [main] INFO  nextflow.script.BaseScript - [Log 5]: Generating bigwig files for dREG
+Sep-02 09:52:46.990 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:46.990 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:46.994 [main] INFO  nextflow.script.BaseScript - [Log 5]: Bigwig files are ready 
+
+Sep-02 09:52:46.996 [main] INFO  nextflow.script.BaseScript - Log[6]: Running dREG
+Sep-02 09:52:46.996 [main] INFO  nextflow.script.BaseScript - Log[6]: N.B. Requires GPUs
+Sep-02 09:52:47.000 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:47.000 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:47.003 [main] INFO  nextflow.script.BaseScript - [Log 7]: Getting tfit bidir stats
+Sep-02 09:52:47.009 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:47.009 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:47.026 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:47.027 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:47.033 [main] INFO  nextflow.script.BaseScript - [Log 8]: Running FeatureCounts
+Sep-02 09:52:47.037 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:47.037 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:47.041 [main] INFO  nextflow.script.BaseScript - [Log 8]: Done Running FeatureCounts
+
+Sep-02 09:52:47.043 [main] INFO  nextflow.script.BaseScript - [Log 9]: Running FeatureCounts over bidirs
+Sep-02 09:52:47.047 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-02 09:52:47.048 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-02 09:52:47.056 [main] INFO  nextflow.script.BaseScript - [Log 9]: Done Running FeatureCounts
+
+Sep-02 09:52:47.062 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: gene_count, tfit_prelim_process, bedgraphs, calculate_dreg_stats, tfit_split_model_max10kb, calculate_tfit_stats, tfit_prelim, tfit_split_model_max5kb, tfit_model, dreg_postprocess, cram_to_bam, dreg_run, bidirectional_count, dreg_prep, tfit_prelim_process_split, get_software_versions, FStitch, accumulate_tfit_stats, accumulate_dreg_stats, tfit_split_cat, bam_conversion_tfit
+Sep-02 09:52:47.065 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Sep-02 09:52:47.065 [main] DEBUG nextflow.Session - Session await
+Sep-02 09:52:47.073 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process get_software_versions > jobId: 8650557; workDir: /Shares/down/PRO/temp2/bb/3ae5c8a05246e46046bb68f4405fae
+Sep-02 09:52:47.073 [Task submitter] INFO  nextflow.Session - [bb/3ae5c8] Submitted process > get_software_versions
+Sep-02 09:52:47.156 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process cram_to_bam (crams.sorted) > jobId: 8650558; workDir: /Shares/down/PRO/temp2/62/6c8bc76c1e44ffeaa7dadc9033ab79
+Sep-02 09:52:47.156 [Task submitter] INFO  nextflow.Session - [62/6c8bc7] Submitted process > cram_to_bam (crams.sorted)
+Sep-02 09:52:51.238 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 8650557; id: 1; name: get_software_versions; status: COMPLETED; exit: 0; error: -; workDir: /Shares/down/PRO/temp2/bb/3ae5c8a05246e46046bb68f4405fae started: 1662133971226; exited: 2022-09-03T00:29:39.816365Z; ]
+Sep-02 09:52:51.275 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 8650558; id: 2; name: cram_to_bam (crams.sorted); status: COMPLETED; exit: 1; error: -; workDir: /Shares/down/PRO/temp2/62/6c8bc76c1e44ffeaa7dadc9033ab79 started: 1662133971269; exited: 2022-09-03T00:29:37.836885Z; ]
+Sep-02 09:52:51.319 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'cram_to_bam (crams.sorted)'
+
+Caused by:
+  Process `cram_to_bam (crams.sorted)` terminated with an error exit status (1)
+
+Command executed:
+
+  samtools view -@ 16 -b -1 -T /scratch/Shares/dowell/genomes/hg38/hg38.fa crams > crams.sorted.sorted.bam
+  samtools index crams.sorted.sorted.bam crams.sorted.sorted.bam.bai
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  [E::hts_hopen] Failed to open file crams
+  [E::hts_open_format] Failed to open file crams
+  samtools view: failed to open "crams" for reading: Is a directory
+
+Work dir:
+  /Shares/down/PRO/temp2/62/6c8bc76c1e44ffeaa7dadc9033ab79
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Sep-02 09:52:51.331 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `cram_to_bam (crams.sorted)` terminated with an error exit status (1)
+Sep-02 09:52:51.344 [main] DEBUG nextflow.Session - Session await > all process finished
+Sep-02 09:52:51.362 [Task monitor] DEBUG nextflow.Session - The following nodes are still active:
+  [operator] collectFile
+
+Sep-02 09:52:51.367 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Sep-02 09:52:51.383 [Actor Thread 34] ERROR nextflow.extension.DataflowHelper - @unknown
+java.nio.channels.ClosedByInterruptException: null
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at sun.nio.ch.FileChannelImpl.map(FileChannelImpl.java:970)
+	at org.iq80.leveldb.impl.MMapLogWriter.<init>(MMapLogWriter.java:66)
+	at org.iq80.leveldb.impl.Logs.createLogWriter(Logs.java:36)
+	at org.iq80.leveldb.impl.VersionSet.initializeIfNeeded(VersionSet.java:107)
+	at org.iq80.leveldb.impl.VersionSet.<init>(VersionSet.java:92)
+	at org.iq80.leveldb.impl.DbImpl.<init>(DbImpl.java:180)
+	at org.iq80.leveldb.impl.Iq80DBFactory.open(Iq80DBFactory.java:83)
+	at nextflow.sort.LevelDbSort.create(LevelDbSort.java:49)
+	at nextflow.file.SortFileCollector.createStoreAndIndex(SortFileCollector.groovy:175)
+	at nextflow.file.SortFileCollector.add(SortFileCollector.groovy:205)
+	at nextflow.file.SortFileCollector$add.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at nextflow.extension.CollectFileOp.processItem(CollectFileOp.groovy:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+	at groovy.lang.MetaClassImpl.invokeMethodClosure(MetaClassImpl.java:1048)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1142)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:428)
+	at groovy.lang.Closure$call.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at nextflow.extension.DataflowHelper$_subscribeImpl_closure2.doCall(DataflowHelper.groovy:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.onMessage(DataflowOperatorActor.java:108)
+	at groovyx.gpars.actor.impl.SDAClosure$1.call(SDAClosure.java:43)
+	at groovyx.gpars.actor.AbstractLoopingActor.runEnhancedWithoutRepliesOnMessages(AbstractLoopingActor.java:293)
+	at groovyx.gpars.actor.AbstractLoopingActor.access$400(AbstractLoopingActor.java:30)
+	at groovyx.gpars.actor.AbstractLoopingActor$1.handleMessage(AbstractLoopingActor.java:93)
+	at groovyx.gpars.util.AsyncMessagingCore.run(AsyncMessagingCore.java:132)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Sep-02 09:52:51.477 [main] INFO  nextflow.Nextflow - [Bidirectional-Flow] Pipeline Complete
+Sep-02 09:52:51.483 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1.9s; failedDuration=96ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=16; peakMemory=5 GB; ]
+Sep-02 09:52:51.484 [main] DEBUG nextflow.trace.TraceFileObserver - Flow completing -- flushing trace file
+Sep-02 09:52:51.487 [main] DEBUG nextflow.trace.ReportObserver - Flow completing -- rendering html report
+Sep-02 09:52:51.540 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":{"mean":46.6,"min":46.6,"q1":46.6,"q2":46.6,"q3":46.6,"max":46.6,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"process":"get_software_versions","mem":{"mean":6434816,"min":6434816,"q1":6434816,"q2":6434816,"q3":6434816,"max":6434816,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"memUsage":null,"timeUsage":{"mean":0.05,"min":0.05,"q1":0.05,"q2":0.05,"q3":0.05,"max":0.05,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"vmem":{"mean":292208640,"min":292208640,"q1":292208640,"q2":292208640,"q3":292208640,"max":292208640,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"reads":{"mean":12550133,"min":12550133,"q1":12550133,"q2":12550133,"q3":12550133,"max":12550133,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"cpu":{"mean":46.6,"min":46.6,"q1":46.6,"q2":46.6,"q3":46.6,"max":46.6,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"time":{"mean":1899,"min":1899,"q1":1899,"q2":1899,"q3":1899,"max":1899,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"writes":{"mean":7556,"min":7556,"q1":7556,"q2":7556,"q3":7556,"max":7556,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"}},{"cpuUsage":null,"process":"cram_to_bam","mem":null,"memUsage":null,"timeUsage":null,"vmem":null,"reads":null,"cpu":null,"time":{"mean":6,"min":6,"q1":6,"q2":6,"q3":6,"max":6,"minLabel":"cram_to_bam (crams.sorted)","maxLabel":"cram_to_bam (crams.sorted)","q1Label":"cram_to_bam (crams.sorted)","q2Label":"cram_to_bam (crams.sorted)","q3Label":"cram_to_bam (crams.sorted)"},"writes":null}]
+Sep-02 09:52:52.376 [main] DEBUG nextflow.trace.TimelineObserver - Flow completing -- rendering html timeline
+Sep-02 09:52:52.563 [main] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-7487826269570815244
+Sep-02 09:52:52.567 [main] DEBUG nextflow.file.SortFileCollector - FileCollector temp dir not removed: null
+Sep-02 09:52:52.576 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Sep-02 09:52:52.598 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,20 @@
+
+ATAC BAMS are
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/ChipFlow_dros/mapped/mergedbams/*.sorted.bam
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/ChipFlow_human/mapped/mergedbams/*.sorted.bam
+
+PRO crams are
+/Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/*.sorted.cram
+/Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_dros/mapped/crams/*.sorted.cram (not done)
+
+PRO bams are
+/Shares/down/heatshock/analysis_June2022/outfiles/PRO/BedgraphsandBigwigs_human/mapped/bams/*.bam
+
+gene traces for ATAC
+/Shares/down/heatshock/analysis_June2022/figures/ATAC/
+
+
+deseq2 resulst on PRO genes
+/Shares/down/heatshock/analysis_June2022/outfiles/PRO/gene_counts_and_diffexp/body_only/
+/Shares/down/heatshock/analysis_June2022/outfiles/PRO/gene_counts_and_diffexp/body_only/graphs/
+/Shares/down/heatshock/analysis_June2022/figures/PRO/

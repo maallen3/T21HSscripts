@@ -1,0 +1,9 @@
+#file	sampid	group
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/peaks/HMMRATACpeaks/Eric37_rep1.open.sorted.bed	Eric_D21_thirtyseven_R1	D21_thirtyseven
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/peaks/HMMRATACpeaks/Eric42_rep1.open.sorted.bed	Eric_D21_fourtytwo_R1	D21_fourtytwo
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/peaks/HMMRATACpeaks/Ethan37_rep1.open.sorted.bed	Ethan_T21_thirtyseven_R1	T21_thirtyseven
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/peaks/HMMRATACpeaks/Ethan42_rep1.open.sorted.bed	Ethan_T21_fourtytwo_R1	T21_fourtytwo
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/peaks/HMMRATACpeaks/Eric37_rep2.open.sorted.bed	Eric_D21_thirtyseven_R2	D21_thirtyseven
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/peaks/HMMRATACpeaks/Eric42_rep2.open.sorted.bed	Eric_D21_fourtytwo_R2	D21_fourtytwo
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/peaks/HMMRATACpeaks/Ethan37_rep2.open.sorted.bed	Ethan_T21_thirtyseven_R2	T21_thirtyseven
+/Shares/down/heatshock/analysis_June2022/outfiles/ATAC/peaks/HMMRATACpeaks/Ethan42_rep2.open.sorted.bed	Ethan_T21_fourtytwo_R2	T21_fourtytwo

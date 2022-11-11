@@ -1,0 +1,765 @@
+Aug-31 10:24:03.455 [main] DEBUG nextflow.cli.Launcher - $> nextflow run /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/main.nf -profile hg38 --crams '/Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/*.sorted.cram' --workdir /scratch/Users/allenma/temp/ --outdir /Shares/down/heatshock/analysis_June2022/outfiles/PRO/BedgraphsandBigwigs_human/ --saveall --singleEnd
+Aug-31 10:24:03.618 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.4
+Aug-31 10:24:03.735 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/nextflow.config
+Aug-31 10:24:03.738 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/nextflow.config
+Aug-31 10:24:03.780 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `hg38`
+Aug-31 10:24:05.668 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [equCab3, saCer3, Pfalci, rheMac8, none, mm10, dm6, canFam4, susScr11, ce10, EF2, Ttherm, minimal, hg38, panTro6, EB1, TAIR10, R64_1_1, myoLuc2, rn6, MEv6, criGriChoV2, AGPv4]
+Aug-31 10:24:05.718 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 by probing script field
+Aug-31 10:24:05.759 [main] INFO  nextflow.cli.CmdRun - Launching `/Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/main.nf` [big_rosalind] DSL1 - revision: bea9ad3ae8
+Aug-31 10:24:05.785 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/Users/allenma/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Aug-31 10:24:05.786 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-31 10:24:05.804 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-31 10:24:05.806 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-31 10:24:05.812 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Aug-31 10:24:05.828 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-31 10:24:05.932 [main] DEBUG nextflow.Session - Session uuid: 1884ea7e-4cff-4ca1-91eb-6c63f6b23f30
+Aug-31 10:24:05.932 [main] DEBUG nextflow.Session - Run name: big_rosalind
+Aug-31 10:24:05.933 [main] DEBUG nextflow.Session - Executor pool size: 64
+Aug-31 10:24:05.962 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.4 build 5706
+  Created: 19-06-2022 20:51 UTC (14:51 MDT)
+  System: Linux 3.10.0-1160.59.1.el7.x86_64
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 1.8.0_292-b10
+  Encoding: UTF-8 (UTF-8)
+  Process: 57097@fijinode-42 [10.224.32.62]
+  CPUs: 64 - Mem: 503.7 GB (146.4 GB) - Swap: 32 GB (13.3 GB)
+Aug-31 10:24:06.002 [main] DEBUG nextflow.Session - Work-dir: /scratch/Users/allenma/temp [fhgfs]
+Aug-31 10:24:06.026 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-31 10:24:06.042 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-31 10:24:06.137 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-31 10:24:06.157 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Aug-31 10:24:06.274 [main] DEBUG nextflow.Session - Session start invoked
+Aug-31 10:24:06.280 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Shares/down/heatshock/analysis_June2022/outfiles/PRO/BedgraphsandBigwigs_human/pipeline_info/downfile_pipeline_trace.txt
+Aug-31 10:24:07.978 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-31 10:24:08.022 [main] INFO  nextflow.Nextflow - ========================================
+Downfile Pipeline v1.0"
+========================================
+Aug-31 10:24:08.030 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `savebam` -- Initialise it to a default value eg. `params.savebam = some_value`
+Aug-31 10:24:08.040 [main] INFO  nextflow.Nextflow - Pipeline Name  : Downfile Pipeline
+Help Message   : false
+Pipeline Version: 1.0
+Run Name       : big_rosalind
+CRAMs          : /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/*.sorted.cram
+Genome Ref     : /scratch/Shares/dowell/genomes/hg38/hg38.fa
+Chromosome sizes: /scratch/Shares/dowell/genomes/hg38/hg38.chrom.sizes
+Data Type      : Single-End
+Save bams      : YES
+Save bedgraphs : YES
+Save tfit bedgraphs: YES
+Save vis bigwigs: YES
+Save dreg bigwigs: YES
+Save tdfs      : YES
+Max Memory     : 20 GB
+Max CPUs       : 1
+Max Time       : 3d 4h
+Output dir     : /Shares/down/heatshock/analysis_June2022/outfiles/PRO/BedgraphsandBigwigs_human/
+Working dir    : /scratch/Users/allenma/temp
+Container Engine: null
+Current home   : /Users/allenma
+Current user   : allenma
+Current path   : /Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows
+Script dir     : /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline
+Config Profile : hg38
+Aug-31 10:24:08.062 [main] INFO  nextflow.Nextflow - =======================================================
+Aug-31 10:24:08.170 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-31 10:24:08.170 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-31 10:24:08.178 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Aug-31 10:24:08.186 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=503.7 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Aug-31 10:24:08.615 [main] INFO  nextflow.script.BaseScript - [Log 1]: Converting CRAM files to BAM files
+Aug-31 10:24:08.618 [main] INFO  nextflow.script.BaseScript - [Log 1]: Genome file being used ..... /scratch/Shares/dowell/genomes/hg38/hg38.fa 
+Aug-31 10:24:08.621 [main] INFO  nextflow.script.BaseScript - [Log 1]: Cram file directory ........ /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/*.sorted.cram
+Aug-31 10:24:08.622 [main] INFO  nextflow.script.BaseScript - [Log 1]: Working directory ... /scratch/Users/allenma/temp/
+Aug-31 10:24:08.622 [main] INFO  nextflow.script.BaseScript - [Log 1]: Output directory ... /Shares/down/heatshock/analysis_June2022/outfiles/PRO/BedgraphsandBigwigs_human/
+Aug-31 10:24:08.633 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/; pattern: *.sorted.cram; options: [:]
+Aug-31 10:24:08.679 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-31 10:24:08.679 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-31 10:24:08.692 [main] INFO  nextflow.script.BaseScript - [Log 1]: Sorting BAM files
+Aug-31 10:24:08.692 [main] INFO  nextflow.script.BaseScript - [Log 1]: Collecting mapstats
+Aug-31 10:24:08.706 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-31 10:24:08.706 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-31 10:24:08.717 [main] INFO  nextflow.script.BaseScript - [Log 1]: Filtering multimapped reads for Tfit
+Aug-31 10:24:08.722 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-31 10:24:08.723 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-31 10:24:08.729 [main] INFO  nextflow.script.BaseScript - [Log 2]: Generating FStitch/Tfit bedgraphs
+Aug-31 10:24:08.730 [main] INFO  nextflow.script.BaseScript - [Log 2]: Genome information ..... /scratch/Shares/dowell/genomes/hg38/hg38.fa 
+Aug-31 10:24:08.732 [main] INFO  nextflow.script.BaseScript - [Log 2]: Chromosome Sizes ....... /scratch/Shares/dowell/genomes/hg38/hg38.chrom.sizes
+Aug-31 10:24:08.740 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-31 10:24:08.740 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-31 10:24:08.747 [main] INFO  nextflow.script.BaseScript - [Log 2]: Generating normalized bedgraphs
+Aug-31 10:24:08.748 [main] INFO  nextflow.script.BaseScript - [Log 2]: Genome information ..... /scratch/Shares/dowell/genomes/hg38/hg38.fa 
+Aug-31 10:24:08.749 [main] INFO  nextflow.script.BaseScript - [Log 2]: Chromosome Sizes ....... /scratch/Shares/dowell/genomes/hg38/hg38.chrom.sizes
+Aug-31 10:24:08.756 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-31 10:24:08.756 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-31 10:24:08.762 [main] INFO  nextflow.script.BaseScript - [Log 3]: Generating normalized bigwig files for visualization
+Aug-31 10:24:08.765 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-31 10:24:08.765 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-31 10:24:08.770 [main] INFO  nextflow.script.BaseScript - [Log 4]: Generating bigwig files for dREG
+Aug-31 10:24:08.777 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-31 10:24:08.777 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-31 10:24:08.784 [main] INFO  nextflow.script.BaseScript - Log[5]: Generating TDFs
+Aug-31 10:24:08.787 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Aug-31 10:24:08.787 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Aug-31 10:24:08.793 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: cram_to_bam, dreg_prep, samtools, tfit_bedgraphs, get_software_versions, norm_bedgraphs, igvtools, normalized_bigwigs, bam_conversion_tfit
+Aug-31 10:24:08.795 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Aug-31 10:24:08.795 [main] DEBUG nextflow.Session - Session await
+Aug-31 10:24:08.840 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:24:08.845 [Task submitter] INFO  nextflow.Session - [b6/9302d8] Submitted process > get_software_versions
+Aug-31 10:24:08.882 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:24:08.882 [Task submitter] INFO  nextflow.Session - [da/be8e76] Submitted process > cram_to_bam (Ethan42_rep2)
+Aug-31 10:24:08.902 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:24:08.903 [Task submitter] INFO  nextflow.Session - [14/2a0fc1] Submitted process > cram_to_bam (Ethan42_rep1)
+Aug-31 10:24:08.920 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:24:08.920 [Task submitter] INFO  nextflow.Session - [a6/0610f9] Submitted process > cram_to_bam (Eric37_rep1)
+Aug-31 10:24:09.571 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: get_software_versions; status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/b6/9302d870929d1e74caa1409aaab406]
+Aug-31 10:24:09.584 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:24:09.585 [Task submitter] INFO  nextflow.Session - [55/256a64] Submitted process > cram_to_bam (Eric42_rep2)
+Aug-31 10:24:09.828 [Actor Thread 37] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 1; slices: 1; internal sort time: 0.001 s; external sort time: 0.017 s; total time: 0.018 s
+Aug-31 10:24:09.861 [Actor Thread 37] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /tmp/fc8713bcb780a487899f5394b326d60e.collect-file
+Aug-31 10:24:09.871 [Actor Thread 37] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-8208829556941729956
+Aug-31 10:25:21.924 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: cram_to_bam (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/55/256a64fe98df8e69dd32a8eb1b5469]
+Aug-31 10:25:21.947 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:25:21.948 [Task submitter] INFO  nextflow.Session - [31/7b1624] Submitted process > cram_to_bam (Ethan37_rep2)
+Aug-31 10:25:22.256 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: cram_to_bam (Ethan42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/da/be8e76493447d82d25d65cf5491939]
+Aug-31 10:25:22.270 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:25:22.271 [Task submitter] INFO  nextflow.Session - [f5/81d316] Submitted process > cram_to_bam (Eric42_rep1)
+Aug-31 10:25:42.692 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: cram_to_bam (Eric37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/a6/0610f9469a3f02784b443665053f9a]
+Aug-31 10:25:42.706 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:25:42.707 [Task submitter] INFO  nextflow.Session - [b7/6da5f0] Submitted process > cram_to_bam (Eric37_rep2)
+Aug-31 10:25:48.277 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: cram_to_bam (Ethan42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/14/2a0fc1566c5b892f8c704ce12d3d24]
+Aug-31 10:25:48.291 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:25:48.292 [Task submitter] INFO  nextflow.Session - [d3/1b92f6] Submitted process > cram_to_bam (Ethan37_rep1)
+Aug-31 10:26:47.924 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: cram_to_bam (Ethan37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/31/7b1624e91ba2cad2687fb295d5a443]
+Aug-31 10:26:47.943 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:26:47.943 [Task submitter] INFO  nextflow.Session - [24/8dd945] Submitted process > samtools (Eric42_rep2)
+Aug-31 10:26:57.519 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: cram_to_bam (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/b7/6da5f05348d9b0e1c240a1289570f6]
+Aug-31 10:26:57.537 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:26:57.538 [Task submitter] INFO  nextflow.Session - [dc/49ffbb] Submitted process > samtools (Ethan42_rep2)
+Aug-31 10:27:02.549 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: cram_to_bam (Eric42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/f5/81d316450b935f8578e5dec08f388b]
+Aug-31 10:27:02.564 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:27:02.565 [Task submitter] INFO  nextflow.Session - [14/c57a5d] Submitted process > samtools (Eric37_rep1)
+Aug-31 10:27:32.035 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: cram_to_bam (Ethan37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/d3/1b92f6064e87f93846baa75d555bd5]
+Aug-31 10:27:32.049 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:27:32.050 [Task submitter] INFO  nextflow.Session - [1d/95a02f] Submitted process > samtools (Ethan42_rep1)
+Aug-31 10:28:52.628 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: samtools (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/24/8dd9455589ce7064a8c559d0e227b6]
+Aug-31 10:28:52.645 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:28:52.645 [Task submitter] INFO  nextflow.Session - [f8/1b9085] Submitted process > samtools (Ethan37_rep2)
+Aug-31 10:28:52.668 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=4; maxSize=4; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Aug-31 10:29:08.353 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 11; name: samtools (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/dc/49ffbb3fd2c84598900c6880828dd4]
+~> TaskHandler[id: 12; name: samtools (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/14/c57a5de32076ef97cd5e753ed2fde0]
+~> TaskHandler[id: 13; name: samtools (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1d/95a02f073a43e90155802a7b14c77a]
+~> TaskHandler[id: 14; name: samtools (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f8/1b90858634909bd5e56e2badd04c77]
+Aug-31 10:29:09.658 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 6 -- tasks to be submitted are shown below
+~> TaskHandler[id: 15; name: samtools (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/90/d6280a34c4531e6d3ea6f86bb28dbc]
+~> TaskHandler[id: 16; name: samtools (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/db/8140040c18816ba565ee2e742a0c87]
+~> TaskHandler[id: 17; name: samtools (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/e2cb6ed4be5d22922b75aa7e30ee53]
+~> TaskHandler[id: 18; name: bam_conversion_tfit (Eric42_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/50/d20d423888333b87b1f9c544606a1b]
+~> TaskHandler[id: 19; name: norm_bedgraphs (Eric42_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/06/393eecf64c758a63ae3345ee2a5a11]
+~> TaskHandler[id: 20; name: dreg_prep (Eric42_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/7b/8264d87e8b1f82a73f75fe21dd9e88]
+Aug-31 10:29:15.883 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: samtools (Ethan42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/dc/49ffbb3fd2c84598900c6880828dd4]
+Aug-31 10:29:15.904 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:29:15.905 [Task submitter] INFO  nextflow.Session - [90/d6280a] Submitted process > samtools (Eric37_rep2)
+Aug-31 10:30:39.375 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: samtools (Eric37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/14/c57a5de32076ef97cd5e753ed2fde0]
+Aug-31 10:30:39.394 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:30:39.395 [Task submitter] INFO  nextflow.Session - [db/814004] Submitted process > samtools (Eric42_rep1)
+Aug-31 10:31:31.472 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: samtools (Ethan42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/1d/95a02f073a43e90155802a7b14c77a]
+Aug-31 10:31:31.493 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:31:31.494 [Task submitter] INFO  nextflow.Session - [91/e2cb6e] Submitted process > samtools (Ethan37_rep1)
+Aug-31 10:31:38.824 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: samtools (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/90/d6280a34c4531e6d3ea6f86bb28dbc]
+Aug-31 10:31:38.837 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:31:38.838 [Task submitter] INFO  nextflow.Session - [50/d20d42] Submitted process > bam_conversion_tfit (Eric42_rep2)
+Aug-31 10:31:50.932 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: samtools (Ethan37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/f8/1b90858634909bd5e56e2badd04c77]
+Aug-31 10:31:50.949 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:31:50.949 [Task submitter] INFO  nextflow.Session - [06/393eec] Submitted process > norm_bedgraphs (Eric42_rep2)
+Aug-31 10:31:50.970 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:31:50.971 [Task submitter] INFO  nextflow.Session - [a7/c8e524] Submitted process > norm_bedgraphs (Ethan42_rep2)
+Aug-31 10:31:51.003 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:31:51.004 [Task submitter] INFO  nextflow.Session - [8d/c2e971] Submitted process > norm_bedgraphs (Eric37_rep1)
+Aug-31 10:31:51.027 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:31:51.029 [Task submitter] INFO  nextflow.Session - [75/201ce3] Submitted process > norm_bedgraphs (Ethan42_rep1)
+Aug-31 10:31:51.061 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:31:51.061 [Task submitter] INFO  nextflow.Session - [f0/83bc2e] Submitted process > norm_bedgraphs (Eric37_rep2)
+Aug-31 10:31:51.080 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:31:51.082 [Task submitter] INFO  nextflow.Session - [65/21c498] Submitted process > norm_bedgraphs (Ethan37_rep2)
+Aug-31 10:34:08.383 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 9 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: samtools (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/db/8140040c18816ba565ee2e742a0c87]
+~> TaskHandler[id: 17; name: samtools (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/e2cb6ed4be5d22922b75aa7e30ee53]
+~> TaskHandler[id: 18; name: bam_conversion_tfit (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/50/d20d423888333b87b1f9c544606a1b]
+~> TaskHandler[id: 19; name: norm_bedgraphs (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/06/393eecf64c758a63ae3345ee2a5a11]
+~> TaskHandler[id: 22; name: norm_bedgraphs (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a7/c8e5248315e50edc1d6af7cf22d1dd]
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 30; name: norm_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f0/83bc2e11eb19cef7671014bf361c3b]
+~> TaskHandler[id: 34; name: norm_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/65/21c49893585b33e49c1778f1b3ffe3]
+Aug-31 10:34:10.134 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 11 -- tasks to be submitted are shown below
+~> TaskHandler[id: 20; name: dreg_prep (Eric42_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/7b/8264d87e8b1f82a73f75fe21dd9e88]
+~> TaskHandler[id: 21; name: bam_conversion_tfit (Ethan42_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/b1b9cd6128ad09b3bcae3a0f2bb541]
+~> TaskHandler[id: 23; name: dreg_prep (Ethan42_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/7ab00d7830a0f0be71d26bca990653]
+~> TaskHandler[id: 25; name: bam_conversion_tfit (Eric37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f2/2d9ce74f433e5c93e8284517f340ad]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+Aug-31 10:34:37.928 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: samtools (Eric42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/db/8140040c18816ba565ee2e742a0c87]
+Aug-31 10:34:37.944 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:34:37.945 [Task submitter] INFO  nextflow.Session - [7b/8264d8] Submitted process > dreg_prep (Eric42_rep2)
+Aug-31 10:34:38.963 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:34:38.963 [Task submitter] INFO  nextflow.Session - [ba/4a3342] Submitted process > norm_bedgraphs (Eric42_rep1)
+Aug-31 10:35:32.233 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: samtools (Ethan37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/91/e2cb6ed4be5d22922b75aa7e30ee53]
+Aug-31 10:35:32.249 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:35:32.250 [Task submitter] INFO  nextflow.Session - [1f/b1b9cd] Submitted process > bam_conversion_tfit (Ethan42_rep2)
+Aug-31 10:35:33.269 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:35:33.270 [Task submitter] INFO  nextflow.Session - [fc/05edc1] Submitted process > norm_bedgraphs (Ethan37_rep1)
+Aug-31 10:39:08.483 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 11 -- submitted tasks are shown below
+~> TaskHandler[id: 18; name: bam_conversion_tfit (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/50/d20d423888333b87b1f9c544606a1b]
+~> TaskHandler[id: 19; name: norm_bedgraphs (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/06/393eecf64c758a63ae3345ee2a5a11]
+~> TaskHandler[id: 22; name: norm_bedgraphs (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a7/c8e5248315e50edc1d6af7cf22d1dd]
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 30; name: norm_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f0/83bc2e11eb19cef7671014bf361c3b]
+~> TaskHandler[id: 34; name: norm_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/65/21c49893585b33e49c1778f1b3ffe3]
+~> TaskHandler[id: 20; name: dreg_prep (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/7b/8264d87e8b1f82a73f75fe21dd9e88]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 21; name: bam_conversion_tfit (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/b1b9cd6128ad09b3bcae3a0f2bb541]
+Aug-31 10:39:10.337 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 13 -- tasks to be submitted are shown below
+~> TaskHandler[id: 23; name: dreg_prep (Ethan42_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/7ab00d7830a0f0be71d26bca990653]
+~> TaskHandler[id: 25; name: bam_conversion_tfit (Eric37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f2/2d9ce74f433e5c93e8284517f340ad]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+.. remaining tasks omitted.
+Aug-31 10:42:12.340 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: bam_conversion_tfit (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/50/d20d423888333b87b1f9c544606a1b]
+Aug-31 10:42:12.357 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:42:12.358 [Task submitter] INFO  nextflow.Session - [91/7ab00d] Submitted process > dreg_prep (Ethan42_rep2)
+Aug-31 10:42:13.373 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:42:13.374 [Task submitter] INFO  nextflow.Session - [f4/21a416] Submitted process > tfit_bedgraphs (Eric42_rep2)
+Aug-31 10:44:08.487 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 12 -- submitted tasks are shown below
+~> TaskHandler[id: 19; name: norm_bedgraphs (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/06/393eecf64c758a63ae3345ee2a5a11]
+~> TaskHandler[id: 22; name: norm_bedgraphs (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a7/c8e5248315e50edc1d6af7cf22d1dd]
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 30; name: norm_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f0/83bc2e11eb19cef7671014bf361c3b]
+~> TaskHandler[id: 34; name: norm_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/65/21c49893585b33e49c1778f1b3ffe3]
+~> TaskHandler[id: 20; name: dreg_prep (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/7b/8264d87e8b1f82a73f75fe21dd9e88]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 21; name: bam_conversion_tfit (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/b1b9cd6128ad09b3bcae3a0f2bb541]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+.. remaining tasks omitted.
+Aug-31 10:44:10.410 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 12 -- tasks to be submitted are shown below
+~> TaskHandler[id: 25; name: bam_conversion_tfit (Eric37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f2/2d9ce74f433e5c93e8284517f340ad]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+.. remaining tasks omitted.
+Aug-31 10:46:52.454 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: bam_conversion_tfit (Ethan42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/1f/b1b9cd6128ad09b3bcae3a0f2bb541]
+Aug-31 10:46:52.470 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:46:52.471 [Task submitter] INFO  nextflow.Session - [f2/2d9ce7] Submitted process > bam_conversion_tfit (Eric37_rep1)
+Aug-31 10:49:08.535 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 12 -- submitted tasks are shown below
+~> TaskHandler[id: 19; name: norm_bedgraphs (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/06/393eecf64c758a63ae3345ee2a5a11]
+~> TaskHandler[id: 22; name: norm_bedgraphs (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a7/c8e5248315e50edc1d6af7cf22d1dd]
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 30; name: norm_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f0/83bc2e11eb19cef7671014bf361c3b]
+~> TaskHandler[id: 34; name: norm_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/65/21c49893585b33e49c1778f1b3ffe3]
+~> TaskHandler[id: 20; name: dreg_prep (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/7b/8264d87e8b1f82a73f75fe21dd9e88]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 23; name: dreg_prep (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/7ab00d7830a0f0be71d26bca990653]
+.. remaining tasks omitted.
+Aug-31 10:49:10.514 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 12 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+.. remaining tasks omitted.
+Aug-31 10:53:21.220 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: tfit_bedgraphs (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/f4/21a416ae3a2cc68944b0ee54307286]
+Aug-31 10:53:21.242 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:53:21.243 [Task submitter] INFO  nextflow.Session - [36/e8f2f7] Submitted process > tfit_bedgraphs (Ethan42_rep2)
+Aug-31 10:54:08.577 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 12 -- submitted tasks are shown below
+~> TaskHandler[id: 19; name: norm_bedgraphs (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/06/393eecf64c758a63ae3345ee2a5a11]
+~> TaskHandler[id: 22; name: norm_bedgraphs (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a7/c8e5248315e50edc1d6af7cf22d1dd]
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 30; name: norm_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f0/83bc2e11eb19cef7671014bf361c3b]
+~> TaskHandler[id: 34; name: norm_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/65/21c49893585b33e49c1778f1b3ffe3]
+~> TaskHandler[id: 20; name: dreg_prep (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/7b/8264d87e8b1f82a73f75fe21dd9e88]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 23; name: dreg_prep (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/7ab00d7830a0f0be71d26bca990653]
+.. remaining tasks omitted.
+Aug-31 10:54:11.270 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 11 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+Aug-31 10:59:08.626 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 12 -- submitted tasks are shown below
+~> TaskHandler[id: 19; name: norm_bedgraphs (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/06/393eecf64c758a63ae3345ee2a5a11]
+~> TaskHandler[id: 22; name: norm_bedgraphs (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a7/c8e5248315e50edc1d6af7cf22d1dd]
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 30; name: norm_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f0/83bc2e11eb19cef7671014bf361c3b]
+~> TaskHandler[id: 34; name: norm_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/65/21c49893585b33e49c1778f1b3ffe3]
+~> TaskHandler[id: 20; name: dreg_prep (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/7b/8264d87e8b1f82a73f75fe21dd9e88]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 23; name: dreg_prep (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/7ab00d7830a0f0be71d26bca990653]
+.. remaining tasks omitted.
+Aug-31 10:59:11.346 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 11 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+Aug-31 10:59:47.562 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: norm_bedgraphs (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/06/393eecf64c758a63ae3345ee2a5a11]
+Aug-31 10:59:48.588 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:59:48.589 [Task submitter] INFO  nextflow.Session - [20/36117f] Submitted process > igvtools (Eric42_rep2)
+Aug-31 10:59:48.613 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 10:59:48.613 [Task submitter] INFO  nextflow.Session - [a6/0ece10] Submitted process > normalized_bigwigs (Eric42_rep2)
+Aug-31 11:01:36.341 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: normalized_bigwigs (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/a6/0ece1071798acec25525d4ea60c00d]
+Aug-31 11:02:49.058 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: igvtools (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/20/36117f6a91a696b4bdb2c0474939e4]
+Aug-31 11:03:44.951 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: bam_conversion_tfit (Eric37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/f2/2d9ce74f433e5c93e8284517f340ad]
+Aug-31 11:03:45.005 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:03:45.008 [Task submitter] INFO  nextflow.Session - [86/3cd7ad] Submitted process > dreg_prep (Eric37_rep1)
+Aug-31 11:04:08.661 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 11 -- submitted tasks are shown below
+~> TaskHandler[id: 22; name: norm_bedgraphs (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a7/c8e5248315e50edc1d6af7cf22d1dd]
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 30; name: norm_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f0/83bc2e11eb19cef7671014bf361c3b]
+~> TaskHandler[id: 34; name: norm_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/65/21c49893585b33e49c1778f1b3ffe3]
+~> TaskHandler[id: 20; name: dreg_prep (Eric42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/7b/8264d87e8b1f82a73f75fe21dd9e88]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 23; name: dreg_prep (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/7ab00d7830a0f0be71d26bca990653]
+~> TaskHandler[id: 43; name: tfit_bedgraphs (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/36/e8f2f728b2e484339d53394a007413]
+Aug-31 11:04:12.019 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 11 -- tasks to be submitted are shown below
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:04:49.050 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: dreg_prep (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/7b/8264d87e8b1f82a73f75fe21dd9e88]
+Aug-31 11:04:49.065 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:04:49.066 [Task submitter] INFO  nextflow.Session - [c6/675ecb] Submitted process > dreg_prep (Ethan42_rep1)
+Aug-31 11:06:21.279 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: norm_bedgraphs (Ethan42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/a7/c8e5248315e50edc1d6af7cf22d1dd]
+Aug-31 11:06:21.319 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:06:21.320 [Task submitter] INFO  nextflow.Session - [92/fc1d7d] Submitted process > tfit_bedgraphs (Eric37_rep1)
+Aug-31 11:06:33.218 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: tfit_bedgraphs (Ethan42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/36/e8f2f728b2e484339d53394a007413]
+Aug-31 11:06:33.238 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:06:33.239 [Task submitter] INFO  nextflow.Session - [a8/e8b2e3] Submitted process > igvtools (Ethan42_rep2)
+Aug-31 11:06:33.258 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:06:33.259 [Task submitter] INFO  nextflow.Session - [0a/e84605] Submitted process > normalized_bigwigs (Ethan42_rep2)
+Aug-31 11:09:01.159 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: normalized_bigwigs (Ethan42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/0a/e846055269f2f1056fd585cb80565e]
+Aug-31 11:09:08.669 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 11 -- submitted tasks are shown below
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 30; name: norm_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f0/83bc2e11eb19cef7671014bf361c3b]
+~> TaskHandler[id: 34; name: norm_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/65/21c49893585b33e49c1778f1b3ffe3]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 23; name: dreg_prep (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/7ab00d7830a0f0be71d26bca990653]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 46; name: tfit_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/92/fc1d7dc3868dc15b3ecd30b96855cb]
+Aug-31 11:09:12.202 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 9 -- tasks to be submitted are shown below
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:10:37.096 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: norm_bedgraphs (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/f0/83bc2e11eb19cef7671014bf361c3b]
+Aug-31 11:10:38.117 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:10:38.117 [Task submitter] INFO  nextflow.Session - [c4/d676ce] Submitted process > normalized_bigwigs (Eric37_rep2)
+Aug-31 11:10:38.141 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:10:38.142 [Task submitter] INFO  nextflow.Session - [ae/64b293] Submitted process > igvtools (Eric37_rep2)
+Aug-31 11:10:42.212 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: igvtools (Ethan42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/a8/e8b2e380ba7b29fda2a43e8c643cf3]
+Aug-31 11:10:49.021 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: norm_bedgraphs (Ethan37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/65/21c49893585b33e49c1778f1b3ffe3]
+Aug-31 11:10:50.035 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:10:50.036 [Task submitter] INFO  nextflow.Session - [55/523a21] Submitted process > igvtools (Ethan37_rep2)
+Aug-31 11:10:50.054 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:10:50.055 [Task submitter] INFO  nextflow.Session - [a0/19a182] Submitted process > normalized_bigwigs (Ethan37_rep2)
+Aug-31 11:13:44.283 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 52; name: normalized_bigwigs (Ethan37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/a0/19a1829c4d0320b1d6484cfab1e76d]
+Aug-31 11:13:52.537 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: normalized_bigwigs (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/c4/d676ce69e2b5b0fde3fdd92a6b85fd]
+Aug-31 11:14:08.756 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 23; name: dreg_prep (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/91/7ab00d7830a0f0be71d26bca990653]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 46; name: tfit_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/92/fc1d7dc3868dc15b3ecd30b96855cb]
+~> TaskHandler[id: 50; name: igvtools (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ae/64b2935528c911ca0e311b89495768]
+~> TaskHandler[id: 51; name: igvtools (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/55/523a21991788e5f3828be8654025ca]
+Aug-31 11:14:12.542 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 9 -- tasks to be submitted are shown below
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:14:31.625 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: dreg_prep (Ethan42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/91/7ab00d7830a0f0be71d26bca990653]
+Aug-31 11:14:31.641 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:14:31.642 [Task submitter] INFO  nextflow.Session - [c1/3f2d24] Submitted process > bam_conversion_tfit (Ethan42_rep1)
+Aug-31 11:15:17.278 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: igvtools (Ethan37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/55/523a21991788e5f3828be8654025ca]
+Aug-31 11:15:39.607 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: igvtools (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/ae/64b2935528c911ca0e311b89495768]
+Aug-31 11:19:08.757 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 8 -- submitted tasks are shown below
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 46; name: tfit_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/92/fc1d7dc3868dc15b3ecd30b96855cb]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+Aug-31 11:19:12.655 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 8 -- tasks to be submitted are shown below
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:24:10.033 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 8 -- submitted tasks are shown below
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 46; name: tfit_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/92/fc1d7dc3868dc15b3ecd30b96855cb]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+Aug-31 11:24:12.722 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 8 -- tasks to be submitted are shown below
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:27:59.503 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: tfit_bedgraphs (Eric37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/92/fc1d7dc3868dc15b3ecd30b96855cb]
+Aug-31 11:29:08.894 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 7 -- submitted tasks are shown below
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+Aug-31 11:29:13.522 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 8 -- tasks to be submitted are shown below
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:30:57.452 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: bam_conversion_tfit (Ethan42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/c1/3f2d244fc636142826e59ce9848a90]
+Aug-31 11:30:57.469 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:30:57.470 [Task submitter] INFO  nextflow.Session - [a2/174550] Submitted process > bam_conversion_tfit (Eric37_rep2)
+Aug-31 11:30:58.503 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:30:58.504 [Task submitter] INFO  nextflow.Session - [85/c1636b] Submitted process > tfit_bedgraphs (Ethan42_rep1)
+Aug-31 11:34:08.994 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 8 -- submitted tasks are shown below
+~> TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+~> TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 53; name: tfit_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/85/c1636bae065414a00d7f55d6925013]
+Aug-31 11:34:13.548 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 7 -- tasks to be submitted are shown below
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:35:35.221 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: norm_bedgraphs (Eric37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/8d/c2e971fca3dfb0091120e7ee7cf57e]
+Aug-31 11:35:36.280 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:35:36.281 [Task submitter] INFO  nextflow.Session - [c5/fa12aa] Submitted process > igvtools (Eric37_rep1)
+Aug-31 11:35:36.300 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:35:36.301 [Task submitter] INFO  nextflow.Session - [64/ff36c9] Submitted process > normalized_bigwigs (Eric37_rep1)
+Aug-31 11:37:35.779 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: norm_bedgraphs (Ethan42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/75/201ce3ecfb98fda07d62ec50624f8e]
+Aug-31 11:37:36.803 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:37:36.804 [Task submitter] INFO  nextflow.Session - [5c/7ad27e] Submitted process > igvtools (Ethan42_rep1)
+Aug-31 11:37:36.825 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:37:36.825 [Task submitter] INFO  nextflow.Session - [eb/839221] Submitted process > normalized_bigwigs (Ethan42_rep1)
+Aug-31 11:39:09.007 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+~> TaskHandler[id: 53; name: tfit_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/85/c1636bae065414a00d7f55d6925013]
+~> TaskHandler[id: 54; name: igvtools (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c5/fa12aa89162d60ba0f81eb79e4eecb]
+~> TaskHandler[id: 55; name: normalized_bigwigs (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/64/ff36c9a1af3a02f493d85ffbecb897]
+~> TaskHandler[id: 56; name: igvtools (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/5c/7ad27e57d835c48a22166a9f7aac2e]
+~> TaskHandler[id: 57; name: normalized_bigwigs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/eb/8392214555c93ee3c382a70446cebe]
+Aug-31 11:39:13.854 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 7 -- tasks to be submitted are shown below
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:39:22.998 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: norm_bedgraphs (Eric42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/ba/4a334225077232e6a12fc9af8c8cd4]
+Aug-31 11:39:24.016 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:39:24.016 [Task submitter] INFO  nextflow.Session - [02/327746] Submitted process > igvtools (Eric42_rep1)
+Aug-31 11:39:24.037 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:39:24.038 [Task submitter] INFO  nextflow.Session - [80/753f84] Submitted process > normalized_bigwigs (Eric42_rep1)
+Aug-31 11:40:55.220 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: bam_conversion_tfit (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/a2/174550a42607f18503981d3fcc8f07]
+Aug-31 11:40:55.262 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:40:55.263 [Task submitter] INFO  nextflow.Session - [d4/382e30] Submitted process > dreg_prep (Eric37_rep2)
+Aug-31 11:40:55.290 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:40:55.290 [Task submitter] INFO  nextflow.Session - [6d/13d2d2] Submitted process > tfit_bedgraphs (Eric37_rep2)
+Aug-31 11:41:21.157 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 55; name: normalized_bigwigs (Eric37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/64/ff36c9a1af3a02f493d85ffbecb897]
+Aug-31 11:43:38.127 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: normalized_bigwigs (Ethan42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/eb/8392214555c93ee3c382a70446cebe]
+Aug-31 11:44:09.073 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 53; name: tfit_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/85/c1636bae065414a00d7f55d6925013]
+~> TaskHandler[id: 54; name: igvtools (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c5/fa12aa89162d60ba0f81eb79e4eecb]
+~> TaskHandler[id: 56; name: igvtools (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/5c/7ad27e57d835c48a22166a9f7aac2e]
+~> TaskHandler[id: 58; name: igvtools (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/02/3277466d28f934f50d449efe6d6bda]
+~> TaskHandler[id: 59; name: normalized_bigwigs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/80/753f84fa6ad8d10f0fc1519862ff0c]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 60; name: tfit_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/6d/13d2d2b3ca394630353b18b020121e]
+Aug-31 11:44:14.139 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 6 -- tasks to be submitted are shown below
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:45:14.152 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: norm_bedgraphs (Ethan37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/fc/05edc15ed1c54e21e285d62076b260]
+Aug-31 11:45:15.170 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:45:15.171 [Task submitter] INFO  nextflow.Session - [21/bb530c] Submitted process > normalized_bigwigs (Ethan37_rep1)
+Aug-31 11:45:15.203 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:45:15.204 [Task submitter] INFO  nextflow.Session - [9d/f7fae3] Submitted process > igvtools (Ethan37_rep1)
+Aug-31 11:45:35.400 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: normalized_bigwigs (Eric42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/80/753f84fa6ad8d10f0fc1519862ff0c]
+Aug-31 11:45:53.619 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: igvtools (Eric37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/c5/fa12aa89162d60ba0f81eb79e4eecb]
+Aug-31 11:46:44.296 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 56; name: igvtools (Ethan42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/5c/7ad27e57d835c48a22166a9f7aac2e]
+Aug-31 11:48:23.119 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: igvtools (Eric42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/02/3277466d28f934f50d449efe6d6bda]
+Aug-31 11:49:09.087 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 7 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 53; name: tfit_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/85/c1636bae065414a00d7f55d6925013]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 60; name: tfit_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/6d/13d2d2b3ca394630353b18b020121e]
+~> TaskHandler[id: 61; name: normalized_bigwigs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/21/bb530ccd5a39e0d73728141eefc63e]
+~> TaskHandler[id: 62; name: igvtools (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/9d/f7fae3a756dc916ee07facf97c3d69]
+Aug-31 11:49:15.135 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 6 -- tasks to be submitted are shown below
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:51:23.307 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: normalized_bigwigs (Ethan37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/21/bb530ccd5a39e0d73728141eefc63e]
+Aug-31 11:54:09.166 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 6 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+~> TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+~> TaskHandler[id: 53; name: tfit_bedgraphs (Ethan42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/85/c1636bae065414a00d7f55d6925013]
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 60; name: tfit_bedgraphs (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/6d/13d2d2b3ca394630353b18b020121e]
+~> TaskHandler[id: 62; name: igvtools (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/9d/f7fae3a756dc916ee07facf97c3d69]
+Aug-31 11:54:15.355 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 6 -- tasks to be submitted are shown below
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 11:54:22.205 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 62; name: igvtools (Ethan37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/9d/f7fae3a756dc916ee07facf97c3d69]
+Aug-31 11:54:42.411 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 53; name: tfit_bedgraphs (Ethan42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/85/c1636bae065414a00d7f55d6925013]
+Aug-31 11:54:45.052 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: dreg_prep (Eric37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/86/3cd7adbac3bdca2af1e60be3cf11cc]
+Aug-31 11:54:45.075 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:54:45.076 [Task submitter] INFO  nextflow.Session - [da/172382] Submitted process > bam_conversion_tfit (Ethan37_rep2)
+Aug-31 11:55:06.908 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 60; name: tfit_bedgraphs (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/6d/13d2d2b3ca394630353b18b020121e]
+Aug-31 11:55:06.924 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:55:06.925 [Task submitter] INFO  nextflow.Session - [00/532fa4] Submitted process > dreg_prep (Ethan37_rep2)
+Aug-31 11:58:05.315 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: dreg_prep (Ethan42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/c6/675ecbb682dba3ecc4c698374dd335]
+Aug-31 11:58:05.336 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 11:58:05.337 [Task submitter] INFO  nextflow.Session - [41/f2b54b] Submitted process > bam_conversion_tfit (Eric42_rep1)
+Aug-31 11:59:09.198 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+Aug-31 11:59:15.359 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 12:04:09.218 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+Aug-31 12:04:15.435 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 12:05:05.465 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: bam_conversion_tfit (Ethan37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/da/1723828550e82323a42073c5035460]
+Aug-31 12:05:05.482 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 12:05:05.483 [Task submitter] INFO  nextflow.Session - [b7/7cfebe] Submitted process > dreg_prep (Eric42_rep1)
+Aug-31 12:09:09.308 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+Aug-31 12:09:15.544 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+~> TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+Aug-31 12:14:06.201 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: dreg_prep (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/d4/382e30970ea499a9ce6193c616d47e]
+Aug-31 12:14:06.219 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 12:14:06.221 [Task submitter] INFO  nextflow.Session - [e5/ca5b23] Submitted process > bam_conversion_tfit (Ethan37_rep1)
+Aug-31 12:14:09.402 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+Aug-31 12:14:16.232 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 2 -- tasks to be submitted are shown below
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+~> TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+Aug-31 12:14:38.542 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: bam_conversion_tfit (Eric42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/41/f2b54ba7dc7c87e28f9ff8ae4e46b1]
+Aug-31 12:14:38.556 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 12:14:38.557 [Task submitter] INFO  nextflow.Session - [20/1259df] Submitted process > dreg_prep (Ethan37_rep1)
+Aug-31 12:19:09.473 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 12:19:16.620 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 2 -- tasks to be submitted are shown below
+~> TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+~> TaskHandler[id: 64; name: tfit_bedgraphs (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/c2988280b74a3eb3c8587c0cd42d5e]
+Aug-31 12:24:09.511 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 12:24:16.680 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 2 -- tasks to be submitted are shown below
+~> TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+~> TaskHandler[id: 64; name: tfit_bedgraphs (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/c2988280b74a3eb3c8587c0cd42d5e]
+Aug-31 12:29:09.585 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 12:29:16.742 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 2 -- tasks to be submitted are shown below
+~> TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+~> TaskHandler[id: 64; name: tfit_bedgraphs (Eric42_rep1); status: NEW; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/c2988280b74a3eb3c8587c0cd42d5e]
+Aug-31 12:33:37.819 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: bam_conversion_tfit (Ethan37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/e5/ca5b23226f77538469f6d5855fe466]
+Aug-31 12:33:37.838 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 12:33:37.840 [Task submitter] INFO  nextflow.Session - [71/8fdf56] Submitted process > tfit_bedgraphs (Ethan37_rep2)
+Aug-31 12:33:37.901 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 12:33:37.901 [Task submitter] INFO  nextflow.Session - [1f/c29882] Submitted process > tfit_bedgraphs (Eric42_rep1)
+Aug-31 12:33:37.920 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Aug-31 12:33:37.921 [Task submitter] INFO  nextflow.Session - [10/ff529d] Submitted process > tfit_bedgraphs (Ethan37_rep1)
+Aug-31 12:34:09.645 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 6 -- submitted tasks are shown below
+~> TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+~> TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+~> TaskHandler[id: 64; name: tfit_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/c2988280b74a3eb3c8587c0cd42d5e]
+~> TaskHandler[id: 65; name: tfit_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/10/ff529d0a1e997c154fda4e51b2a9ac]
+Aug-31 12:35:58.173 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: dreg_prep (Ethan37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/00/532fa434e65ade5118ee4d0efcea4f]
+Aug-31 12:39:09.684 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- submitted tasks are shown below
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+~> TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+~> TaskHandler[id: 64; name: tfit_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/c2988280b74a3eb3c8587c0cd42d5e]
+~> TaskHandler[id: 65; name: tfit_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/10/ff529d0a1e997c154fda4e51b2a9ac]
+Aug-31 12:44:09.741 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- submitted tasks are shown below
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+~> TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+~> TaskHandler[id: 64; name: tfit_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/c2988280b74a3eb3c8587c0cd42d5e]
+~> TaskHandler[id: 65; name: tfit_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/10/ff529d0a1e997c154fda4e51b2a9ac]
+Aug-31 12:49:09.783 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- submitted tasks are shown below
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+~> TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+~> TaskHandler[id: 64; name: tfit_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/c2988280b74a3eb3c8587c0cd42d5e]
+~> TaskHandler[id: 65; name: tfit_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/10/ff529d0a1e997c154fda4e51b2a9ac]
+Aug-31 12:49:41.432 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 63; name: tfit_bedgraphs (Ethan37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/71/8fdf566ac500d93138d7776b3df610]
+Aug-31 12:54:09.863 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+~> TaskHandler[id: 64; name: tfit_bedgraphs (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/1f/c2988280b74a3eb3c8587c0cd42d5e]
+~> TaskHandler[id: 65; name: tfit_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/10/ff529d0a1e997c154fda4e51b2a9ac]
+Aug-31 12:59:07.536 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 64; name: tfit_bedgraphs (Eric42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/1f/c2988280b74a3eb3c8587c0cd42d5e]
+Aug-31 12:59:09.938 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+~> TaskHandler[id: 65; name: tfit_bedgraphs (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/10/ff529d0a1e997c154fda4e51b2a9ac]
+Aug-31 13:00:38.743 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 65; name: tfit_bedgraphs (Ethan37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/10/ff529d0a1e997c154fda4e51b2a9ac]
+Aug-31 13:04:10.030 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 13:04:44.281 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: dreg_prep (Eric42_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/b7/7cfebe1a5728be6514a3a570b51f0b]
+Aug-31 13:09:10.129 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 13:14:10.202 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 13:17:46.698 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: dreg_prep (Ethan37_rep1); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/20/1259df2b8dc5ef0e68051e530941ca]
+Aug-31 13:17:46.716 [main] DEBUG nextflow.Session - Session await > all process finished
+Aug-31 13:17:46.722 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Aug-31 13:17:46.919 [main] INFO  nextflow.Nextflow - Downfile Pipeline Complete
+Aug-31 13:17:52.344 [main] INFO  nextflow.Session - Waiting files transfer to complete (1 files)
+Aug-31 13:18:14.583 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=65; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=6d 3h 16m 7s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=13; peakCpus=64; peakMemory=500 GB; ]
+Aug-31 13:18:14.584 [main] DEBUG nextflow.trace.TraceFileObserver - Flow completing -- flushing trace file
+Aug-31 13:18:14.601 [main] DEBUG nextflow.trace.ReportObserver - Flow completing -- rendering html report
+Aug-31 13:18:14.849 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":{"mean":105.3,"min":105.3,"q1":105.3,"q2":105.3,"q3":105.3,"max":105.3,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"process":"get_software_versions","mem":{"mean":1597440,"min":1597440,"q1":1597440,"q2":1597440,"q3":1597440,"max":1597440,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"memUsage":{"mean":0.02,"min":0.02,"q1":0.02,"q2":0.02,"q3":0.02,"max":0.02,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"timeUsage":{"mean":0.01,"min":0.01,"q1":0.01,"q2":0.01,"q3":0.01,"max":0.01,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"vmem":{"mean":116019200,"min":116019200,"q1":116019200,"q2":116019200,"q3":116019200,"max":116019200,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"reads":{"mean":17794753,"min":17794753,"q1":17794753,"q2":17794753,"q3":17794753,"max":17794753,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"cpu":{"mean":105.3,"min":105.3,"q1":105.3,"q2":105.3,"q3":105.3,"max":105.3,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"time":{"mean":453,"min":453,"q1":453,"q2":453,"q3":453,"max":453,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"writes":{"mean":1186,"min":1186,"q1":1186,"q2":1186,"q3":1186,"max":1186,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"}},{"cpuUsage":{"mean":44.21,"min":38.75,"q1":40.35,"q2":43.53,"q3":47.39,"max":51.17,"minLabel":"cram_to_bam (Eric37_rep2)","maxLabel":"cram_to_bam (Eric37_rep1)","q1Label":"cram_to_bam (Eric42_rep2)","q2Label":"cram_to_bam (Ethan42_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"process":"cram_to_bam","mem":{"mean":858863104,"min":818499584,"q1":833200128,"q2":853147648,"q3":882801664,"max":910954496,"minLabel":"cram_to_bam (Eric37_rep2)","maxLabel":"cram_to_bam (Ethan37_rep1)","q1Label":"cram_to_bam (Ethan42_rep1)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"memUsage":{"mean":16,"min":15.25,"q1":15.52,"q2":15.89,"q3":16.44,"max":16.97,"minLabel":"cram_to_bam (Eric37_rep2)","maxLabel":"cram_to_bam (Ethan37_rep1)","q1Label":"cram_to_bam (Ethan42_rep1)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"timeUsage":{"mean":1.62,"min":1.33,"q1":1.37,"q2":1.66,"q3":1.84,"max":1.92,"minLabel":"cram_to_bam (Eric42_rep2)","maxLabel":"cram_to_bam (Ethan37_rep1)","q1Label":"cram_to_bam (Ethan42_rep2)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Ethan42_rep1)"},"vmem":{"mean":2048668160,"min":2017923072,"q1":2019232768,"q2":2050189312,"q3":2076664832,"max":2078519296,"minLabel":"cram_to_bam (Eric37_rep2)","maxLabel":"cram_to_bam (Ethan37_rep1)","q1Label":"cram_to_bam (Ethan42_rep1)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Ethan42_rep2)"},"reads":{"mean":5401998041.75,"min":4640475169,"q1":4752012359.75,"q2":5553326206,"q3":5970211334,"max":6046893210,"minLabel":"cram_to_bam (Eric37_rep2)","maxLabel":"cram_to_bam (Ethan42_rep1)","q1Label":"cram_to_bam (Eric42_rep2)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"cpu":{"mean":707.3,"min":620,"q1":645.6,"q2":696.5,"q3":758.28,"max":818.7,"minLabel":"cram_to_bam (Eric37_rep2)","maxLabel":"cram_to_bam (Eric37_rep1)","q1Label":"cram_to_bam (Eric42_rep2)","q2Label":"cram_to_bam (Ethan42_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"time":{"mean":87680.13,"min":72060,"q1":74165.5,"q2":89592,"q3":99318,"max":103477,"minLabel":"cram_to_bam (Eric42_rep2)","maxLabel":"cram_to_bam (Ethan37_rep1)","q1Label":"cram_to_bam (Ethan42_rep2)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Ethan42_rep1)"},"writes":{"mean":5428788933.13,"min":3585623339,"q1":3889879216,"q2":5659081422.5,"q3":6856395048.5,"max":7046675609,"minLabel":"cram_to_bam (Eric42_rep2)","maxLabel":"cram_to_bam (Ethan37_rep1)","q1Label":"cram_to_bam (Eric37_rep2)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"}},{"cpuUsage":{"mean":7.81,"min":7.31,"q1":7.6,"q2":7.79,"q3":8.03,"max":8.33,"minLabel":"samtools (Eric37_rep2)","maxLabel":"samtools (Ethan37_rep1)","q1Label":"samtools (Ethan37_rep2)","q2Label":"samtools (Ethan42_rep1)","q3Label":"samtools (Eric42_rep1)"},"process":"samtools","mem":{"mean":8766976,"min":8327168,"q1":8644608,"q2":8830976,"q3":8935424,"max":8970240,"minLabel":"samtools (Eric42_rep2)","maxLabel":"samtools (Ethan37_rep2)","q1Label":"samtools (Ethan37_rep1)","q2Label":"samtools (Eric37_rep2)","q3Label":"samtools (Eric37_rep1)"},"memUsage":{"mean":0.01,"min":0.01,"q1":0.01,"q2":0.01,"q3":0.01,"max":0.01,"minLabel":"samtools (Eric42_rep2)","maxLabel":"samtools (Ethan37_rep2)","q1Label":"samtools (Ethan37_rep1)","q2Label":"samtools (Eric37_rep2)","q3Label":"samtools (Eric37_rep1)"},"timeUsage":{"mean":1.32,"min":0.86,"q1":0.98,"q2":1.37,"q3":1.66,"max":1.67,"minLabel":"samtools (Eric42_rep2)","maxLabel":"samtools (Ethan37_rep1)","q1Label":"samtools (Ethan42_rep2)","q2Label":"samtools (Ethan37_rep2)","q3Label":"samtools (Eric42_rep1)"},"vmem":{"mean":1483177984,"min":1432846336,"q1":1483177984,"q2":1499955200,"q3":1499955200,"max":1499955200,"minLabel":"samtools (Ethan37_rep2)","maxLabel":"samtools (Ethan37_rep1)","q1Label":"samtools (Eric42_rep1)","q2Label":"samtools (Ethan42_rep2)","q3Label":"samtools (Ethan42_rep1)"},"reads":{"mean":10857865973.63,"min":7171534776,"q1":7780046540.5,"q2":11318450954.5,"q3":13713078199.5,"max":14093639338,"minLabel":"samtools (Eric42_rep2)","maxLabel":"samtools (Ethan37_rep1)","q1Label":"samtools (Eric37_rep2)","q2Label":"samtools (Ethan37_rep2)","q3Label":"samtools (Eric42_rep1)"},"cpu":{"mean":124.98,"min":116.9,"q1":121.68,"q2":124.6,"q3":128.48,"max":133.3,"minLabel":"samtools (Eric37_rep2)","maxLabel":"samtools (Ethan37_rep1)","q1Label":"samtools (Ethan37_rep2)","q2Label":"samtools (Ethan42_rep1)","q3Label":"samtools (Eric42_rep1)"},"time":{"mean":189690.5,"min":124393,"q1":141502.25,"q2":197271,"q3":238488.75,"max":240457,"minLabel":"samtools (Eric42_rep2)","maxLabel":"samtools (Ethan37_rep1)","q1Label":"samtools (Ethan42_rep2)","q2Label":"samtools (Ethan37_rep2)","q3Label":"samtools (Eric42_rep1)"},"writes":{"mean":23856.25,"min":23851,"q1":23854.5,"q2":23857,"q3":23859,"max":23859,"minLabel":"samtools (Eric37_rep2)","maxLabel":"samtools (Ethan37_rep1)","q1Label":"samtools (Ethan42_rep2)","q2Label":"samtools (Eric37_rep1)","q3Label":"samtools (Ethan42_rep1)"}},{"cpuUsage":{"mean":8.9,"min":8.59,"q1":8.65,"q2":8.7,"q3":9.01,"max":9.77,"minLabel":"bam_conversion_tfit (Eric42_rep2)","maxLabel":"bam_conversion_tfit (Ethan37_rep2)","q1Label":"bam_conversion_tfit (Eric37_rep1)","q2Label":"bam_conversion_tfit (Ethan42_rep2)","q3Label":"bam_conversion_tfit (Eric37_rep2)"},"process":"bam_conversion_tfit","mem":{"mean":11972096,"min":11354112,"q1":11899904,"q2":12099584,"q3":12119040,"max":12185600,"minLabel":"bam_conversion_tfit (Eric42_rep2)","maxLabel":"bam_conversion_tfit (Eric37_rep2)","q1Label":"bam_conversion_tfit (Ethan42_rep2)","q2Label":"bam_conversion_tfit (Eric37_rep1)","q3Label":"bam_conversion_tfit (Eric42_rep1)"},"memUsage":{"mean":0.22,"min":0.21,"q1":0.22,"q2":0.23,"q3":0.23,"max":0.23,"minLabel":"bam_conversion_tfit (Eric42_rep2)","maxLabel":"bam_conversion_tfit (Eric37_rep2)","q1Label":"bam_conversion_tfit (Ethan42_rep2)","q2Label":"bam_conversion_tfit (Eric37_rep1)","q3Label":"bam_conversion_tfit (Eric42_rep1)"},"timeUsage":{"mean":11.61,"min":8.3,"q1":8.72,"q2":11.56,"q3":13.86,"max":16.27,"minLabel":"bam_conversion_tfit (Eric37_rep2)","maxLabel":"bam_conversion_tfit (Ethan37_rep1)","q1Label":"bam_conversion_tfit (Ethan37_rep2)","q2Label":"bam_conversion_tfit (Ethan42_rep2)","q3Label":"bam_conversion_tfit (Eric42_rep1)"},"vmem":{"mean":1456467968,"min":1037037568,"q1":1439690752,"q2":1506799616,"q3":1573908480,"max":1573908480,"minLabel":"bam_conversion_tfit (Ethan42_rep2)","maxLabel":"bam_conversion_tfit (Ethan37_rep1)","q1Label":"bam_conversion_tfit (Eric37_rep1)","q2Label":"bam_conversion_tfit (Eric42_rep2)","q3Label":"bam_conversion_tfit (Ethan42_rep1)"},"reads":{"mean":56460222473,"min":41658897961,"q1":44504810307.25,"q2":58295319320.5,"q3":67327370511.25,"max":70611231558,"minLabel":"bam_conversion_tfit (Eric37_rep2)","maxLabel":"bam_conversion_tfit (Ethan37_rep1)","q1Label":"bam_conversion_tfit (Eric42_rep2)","q2Label":"bam_conversion_tfit (Ethan37_rep2)","q3Label":"bam_conversion_tfit (Eric42_rep1)"},"cpu":{"mean":142.39,"min":137.5,"q1":138.4,"q2":139.2,"q3":144.13,"max":156.3,"minLabel":"bam_conversion_tfit (Eric42_rep2)","maxLabel":"bam_conversion_tfit (Ethan37_rep2)","q1Label":"bam_conversion_tfit (Eric37_rep1)","q2Label":"bam_conversion_tfit (Ethan42_rep2)","q3Label":"bam_conversion_tfit (Eric37_rep2)"},"time":{"mean":835936.13,"min":597408,"q1":628091.5,"q2":832502,"q3":997686.75,"max":1171228,"minLabel":"bam_conversion_tfit (Eric37_rep2)","maxLabel":"bam_conversion_tfit (Ethan37_rep1)","q1Label":"bam_conversion_tfit (Ethan37_rep2)","q2Label":"bam_conversion_tfit (Ethan42_rep2)","q3Label":"bam_conversion_tfit (Eric42_rep1)"},"writes":{"mean":53633547435.75,"min":39878652405,"q1":42593267452.25,"q2":55211985959,"q3":63720406053.75,"max":66950815859,"minLabel":"bam_conversion_tfit (Eric37_rep2)","maxLabel":"bam_conversion_tfit (Ethan37_rep1)","q1Label":"bam_conversion_tfit (Eric42_rep2)","q2Label":"bam_conversion_tfit (Ethan37_rep2)","q3Label":"bam_conversion_tfit (Eric42_rep1)"}},{"cpuUsage":{"mean":96.23,"min":92.8,"q1":95.07,"q2":95.8,"q3":97.6,"max":100.5,"minLabel":"tfit_bedgraphs (Ethan37_rep2)","maxLabel":"tfit_bedgraphs (Eric37_rep2)","q1Label":"tfit_bedgraphs (Ethan37_rep1)","q2Label":"tfit_bedgraphs (Ethan42_rep2)","q3Label":"tfit_bedgraphs (Eric37_rep1)"},"process":"tfit_bedgraphs","mem":{"mean":22357388288,"min":10222522368,"q1":14759985152,"q2":23526914048,"q3":30299551744,"max":32049020928,"minLabel":"tfit_bedgraphs (Eric42_rep2)","maxLabel":"tfit_bedgraphs (Ethan37_rep1)","q1Label":"tfit_bedgraphs (Ethan42_rep2)","q2Label":"tfit_bedgraphs (Eric37_rep2)","q3Label":"tfit_bedgraphs (Ethan42_rep1)"},"memUsage":{"mean":52.05,"min":23.8,"q1":34.37,"q2":54.78,"q3":70.55,"max":74.62,"minLabel":"tfit_bedgraphs (Eric42_rep2)","maxLabel":"tfit_bedgraphs (Ethan37_rep1)","q1Label":"tfit_bedgraphs (Ethan42_rep2)","q2Label":"tfit_bedgraphs (Eric37_rep2)","q3Label":"tfit_bedgraphs (Ethan42_rep1)"},"timeUsage":{"mean":7.94,"min":4.64,"q1":5.81,"q2":7.85,"q3":10.07,"max":11.25,"minLabel":"tfit_bedgraphs (Eric42_rep2)","maxLabel":"tfit_bedgraphs (Ethan37_rep1)","q1Label":"tfit_bedgraphs (Ethan42_rep2)","q2Label":"tfit_bedgraphs (Ethan37_rep2)","q3Label":"tfit_bedgraphs (Ethan42_rep1)"},"vmem":{"mean":25825795072,"min":11940216832,"q1":17206235136,"q2":27143622656,"q3":34788121600,"max":37662945280,"minLabel":"tfit_bedgraphs (Eric42_rep2)","maxLabel":"tfit_bedgraphs (Ethan37_rep1)","q1Label":"tfit_bedgraphs (Ethan42_rep2)","q2Label":"tfit_bedgraphs (Eric37_rep2)","q3Label":"tfit_bedgraphs (Ethan42_rep1)"},"reads":{"mean":9476850281.5,"min":5616591769,"q1":6829016835.75,"q2":9562662829,"q3":12322301774,"max":12904133050,"minLabel":"tfit_bedgraphs (Eric42_rep2)","maxLabel":"tfit_bedgraphs (Ethan37_rep1)","q1Label":"tfit_bedgraphs (Ethan42_rep2)","q2Label":"tfit_bedgraphs (Eric37_rep2)","q3Label":"tfit_bedgraphs (Eric42_rep1)"},"cpu":{"mean":96.23,"min":92.8,"q1":95.07,"q2":95.8,"q3":97.6,"max":100.5,"minLabel":"tfit_bedgraphs (Ethan37_rep2)","maxLabel":"tfit_bedgraphs (Eric37_rep2)","q1Label":"tfit_bedgraphs (Ethan37_rep1)","q2Label":"tfit_bedgraphs (Ethan42_rep2)","q3Label":"tfit_bedgraphs (Eric37_rep1)"},"time":{"mean":1143120.38,"min":667562,"q1":836313,"q2":1130552.5,"q3":1450042.25,"max":1620523,"minLabel":"tfit_bedgraphs (Eric42_rep2)","maxLabel":"tfit_bedgraphs (Ethan37_rep1)","q1Label":"tfit_bedgraphs (Ethan42_rep2)","q2Label":"tfit_bedgraphs (Ethan37_rep2)","q3Label":"tfit_bedgraphs (Ethan42_rep1)"},"writes":{"mean":5978795224.63,"min":2733489099,"q1":3944609567,"q2":6283074689,"q3":8107256410,"max":8580367636,"minLabel":"tfit_bedgraphs (Eric42_rep2)","maxLabel":"tfit_bedgraphs (Ethan37_rep1)","q1Label":"tfit_bedgraphs (Ethan42_rep2)","q2Label":"tfit_bedgraphs (Eric37_rep2)","q3Label":"tfit_bedgraphs (Ethan42_rep1)"}},{"cpuUsage":{"mean":90.73,"min":90,"q1":90.4,"q2":90.7,"q3":90.9,"max":91.8,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Ethan37_rep1)","q1Label":"norm_bedgraphs (Ethan42_rep2)","q2Label":"norm_bedgraphs (Ethan42_rep1)","q3Label":"norm_bedgraphs (Ethan37_rep2)"},"process":"norm_bedgraphs","mem":{"mean":24397743616,"min":11249790976,"q1":16221201408,"q2":25638094848,"q3":33062539264,"max":34784149504,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Ethan37_rep1)","q1Label":"norm_bedgraphs (Ethan42_rep2)","q2Label":"norm_bedgraphs (Eric37_rep2)","q3Label":"norm_bedgraphs (Ethan42_rep1)"},"memUsage":{"mean":56.81,"min":26.19,"q1":37.77,"q2":59.69,"q3":76.98,"max":80.99,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Ethan37_rep1)","q1Label":"norm_bedgraphs (Ethan42_rep2)","q2Label":"norm_bedgraphs (Eric37_rep2)","q3Label":"norm_bedgraphs (Ethan42_rep1)"},"timeUsage":{"mean":21.01,"min":11.59,"q1":15.66,"q2":21.34,"q3":27.06,"max":29.03,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Ethan37_rep1)","q1Label":"norm_bedgraphs (Ethan42_rep2)","q2Label":"norm_bedgraphs (Ethan37_rep2)","q3Label":"norm_bedgraphs (Eric42_rep1)"},"vmem":{"mean":28723652608,"min":12849606656,"q1":19494514688,"q2":29804752896,"q3":38645358592,"max":41462116352,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Ethan37_rep1)","q1Label":"norm_bedgraphs (Ethan42_rep2)","q2Label":"norm_bedgraphs (Eric37_rep2)","q3Label":"norm_bedgraphs (Ethan42_rep1)"},"reads":{"mean":22299440658.25,"min":12451915853,"q1":15858902810.25,"q2":22851144899.5,"q3":29292846083,"max":30421735251,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Ethan37_rep1)","q1Label":"norm_bedgraphs (Ethan42_rep2)","q2Label":"norm_bedgraphs (Ethan37_rep2)","q3Label":"norm_bedgraphs (Eric42_rep1)"},"cpu":{"mean":90.73,"min":90,"q1":90.4,"q2":90.7,"q3":90.9,"max":91.8,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Ethan37_rep1)","q1Label":"norm_bedgraphs (Ethan42_rep2)","q2Label":"norm_bedgraphs (Ethan42_rep1)","q3Label":"norm_bedgraphs (Ethan37_rep2)"},"time":{"mean":3024756.13,"min":1669551,"q1":2254538.25,"q2":3073194.5,"q3":3896548,"max":4180354,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Ethan37_rep1)","q1Label":"norm_bedgraphs (Ethan42_rep2)","q2Label":"norm_bedgraphs (Ethan37_rep2)","q3Label":"norm_bedgraphs (Eric42_rep1)"},"writes":{"mean":15703845413.88,"min":7226316315,"q1":10416702050.75,"q2":16496343147,"q3":21291855827.75,"max":22400429610,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Ethan37_rep1)","q1Label":"norm_bedgraphs (Ethan42_rep2)","q2Label":"norm_bedgraphs (Eric37_rep2)","q3Label":"norm_bedgraphs (Ethan42_rep1)"}},{"cpuUsage":{"mean":78.3,"min":74.5,"q1":76.73,"q2":77.95,"q3":79.72,"max":84,"minLabel":"normalized_bigwigs (Ethan37_rep2)","maxLabel":"normalized_bigwigs (Eric42_rep2)","q1Label":"normalized_bigwigs (Eric37_rep2)","q2Label":"normalized_bigwigs (Eric37_rep1)","q3Label":"normalized_bigwigs (Ethan42_rep1)"},"process":"normalized_bigwigs","mem":{"mean":132939776,"min":85774336,"q1":101976064,"q2":135145472,"q3":163167232,"max":173469696,"minLabel":"normalized_bigwigs (Eric42_rep2)","maxLabel":"normalized_bigwigs (Ethan42_rep1)","q1Label":"normalized_bigwigs (Ethan37_rep2)","q2Label":"normalized_bigwigs (Eric37_rep2)","q3Label":"normalized_bigwigs (Ethan37_rep1)"},"memUsage":{"mean":1.24,"min":0.8,"q1":0.95,"q2":1.26,"q3":1.52,"max":1.62,"minLabel":"normalized_bigwigs (Eric42_rep2)","maxLabel":"normalized_bigwigs (Ethan42_rep1)","q1Label":"normalized_bigwigs (Ethan37_rep2)","q2Label":"normalized_bigwigs (Eric37_rep2)","q3Label":"normalized_bigwigs (Ethan37_rep1)"},"timeUsage":{"mean":1.79,"min":0.74,"q1":1.16,"q2":1.87,"q3":2.52,"max":2.57,"minLabel":"normalized_bigwigs (Eric42_rep2)","maxLabel":"normalized_bigwigs (Eric42_rep1)","q1Label":"normalized_bigwigs (Ethan42_rep2)","q2Label":"normalized_bigwigs (Eric37_rep2)","q3Label":"normalized_bigwigs (Ethan42_rep1)"},"vmem":{"mean":281483264,"min":234319872,"q1":250542080,"q2":283678720,"q3":311700480,"max":321990656,"minLabel":"normalized_bigwigs (Eric42_rep2)","maxLabel":"normalized_bigwigs (Ethan42_rep1)","q1Label":"normalized_bigwigs (Ethan37_rep2)","q2Label":"normalized_bigwigs (Eric37_rep2)","q3Label":"normalized_bigwigs (Ethan37_rep1)"},"reads":{"mean":9186711282.25,"min":4211694319,"q1":6088536809.75,"q2":9658187255.5,"q3":12461319039,"max":13096145285,"minLabel":"normalized_bigwigs (Eric42_rep2)","maxLabel":"normalized_bigwigs (Ethan37_rep1)","q1Label":"normalized_bigwigs (Ethan42_rep2)","q2Label":"normalized_bigwigs (Eric37_rep2)","q3Label":"normalized_bigwigs (Ethan42_rep1)"},"cpu":{"mean":78.3,"min":74.5,"q1":76.73,"q2":77.95,"q3":79.72,"max":84,"minLabel":"normalized_bigwigs (Ethan37_rep2)","maxLabel":"normalized_bigwigs (Eric42_rep2)","q1Label":"normalized_bigwigs (Eric37_rep2)","q2Label":"normalized_bigwigs (Eric37_rep1)","q3Label":"normalized_bigwigs (Ethan42_rep1)"},"time":{"mean":258037.88,"min":106818,"q1":166885.75,"q2":269131,"q3":362191.75,"max":370593,"minLabel":"normalized_bigwigs (Eric42_rep2)","maxLabel":"normalized_bigwigs (Eric42_rep1)","q1Label":"normalized_bigwigs (Ethan42_rep2)","q2Label":"normalized_bigwigs (Eric37_rep2)","q3Label":"normalized_bigwigs (Ethan42_rep1)"},"writes":{"mean":438636027.5,"min":252394277,"q1":324221434.5,"q2":450192105.5,"q3":569188475.25,"max":575983343,"minLabel":"normalized_bigwigs (Eric42_rep2)","maxLabel":"normalized_bigwigs (Ethan37_rep1)","q1Label":"normalized_bigwigs (Ethan42_rep2)","q2Label":"normalized_bigwigs (Eric37_rep2)","q3Label":"normalized_bigwigs (Eric42_rep1)"}},{"cpuUsage":{"mean":97.8,"min":93.9,"q1":96.05,"q2":96.95,"q3":99.65,"max":102.6,"minLabel":"igvtools (Ethan37_rep2)","maxLabel":"igvtools (Ethan37_rep1)","q1Label":"igvtools (Eric37_rep2)","q2Label":"igvtools (Eric42_rep2)","q3Label":"igvtools (Ethan42_rep2)"},"process":"igvtools","mem":{"mean":602736640,"min":522399744,"q1":541021184,"q2":571486208,"q3":628916224,"max":764067840,"minLabel":"igvtools (Eric37_rep1)","maxLabel":"igvtools (Eric42_rep1)","q1Label":"igvtools (Ethan42_rep2)","q2Label":"igvtools (Ethan42_rep1)","q3Label":"igvtools (Ethan37_rep2)"},"memUsage":{"mean":1.87,"min":1.62,"q1":1.68,"q2":1.77,"q3":1.95,"max":2.37,"minLabel":"igvtools (Eric37_rep1)","maxLabel":"igvtools (Eric42_rep1)","q1Label":"igvtools (Ethan42_rep2)","q2Label":"igvtools (Ethan42_rep1)","q3Label":"igvtools (Ethan37_rep2)"},"timeUsage":{"mean":11.26,"min":4.99,"q1":7.28,"q2":11.66,"q3":15.18,"max":17.13,"minLabel":"igvtools (Eric42_rep2)","maxLabel":"igvtools (Eric37_rep1)","q1Label":"igvtools (Ethan42_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Ethan37_rep1)"},"vmem":{"mean":8270877184,"min":8213995520,"q1":8279003136,"q2":8279003136,"q3":8279003136,"max":8279003136,"minLabel":"igvtools (Eric37_rep1)","maxLabel":"igvtools (Ethan37_rep1)","q1Label":"igvtools (Eric42_rep2)","q2Label":"igvtools (Ethan37_rep2)","q3Label":"igvtools (Ethan42_rep1)"},"reads":{"mean":3091115465.88,"min":1426911668,"q1":2052526217.75,"q2":3248274162.5,"q3":4188515971.5,"max":4400124635,"minLabel":"igvtools (Eric42_rep2)","maxLabel":"igvtools (Ethan37_rep1)","q1Label":"igvtools (Ethan42_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Ethan42_rep1)"},"cpu":{"mean":97.8,"min":93.9,"q1":96.05,"q2":96.95,"q3":99.65,"max":102.6,"minLabel":"igvtools (Ethan37_rep2)","maxLabel":"igvtools (Ethan37_rep1)","q1Label":"igvtools (Eric37_rep2)","q2Label":"igvtools (Eric42_rep2)","q3Label":"igvtools (Ethan42_rep2)"},"time":{"mean":405448.38,"min":179585,"q1":261916.25,"q2":419757.5,"q3":546422.5,"max":616758,"minLabel":"igvtools (Eric42_rep2)","maxLabel":"igvtools (Eric37_rep1)","q1Label":"igvtools (Ethan42_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Ethan37_rep1)"},"writes":{"mean":263038126.88,"min":140328752,"q1":184170581.25,"q2":270155497,"q3":348015745.75,"max":362593255,"minLabel":"igvtools (Eric42_rep2)","maxLabel":"igvtools (Ethan37_rep1)","q1Label":"igvtools (Ethan42_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Ethan42_rep1)"}},{"cpuUsage":{"mean":6.38,"min":6.3,"q1":6.31,"q2":6.34,"q3":6.41,"max":6.59,"minLabel":"dreg_prep (Eric42_rep1)","maxLabel":"dreg_prep (Eric37_rep2)","q1Label":"dreg_prep (Ethan37_rep1)","q2Label":"dreg_prep (Eric42_rep2)","q3Label":"dreg_prep (Eric37_rep1)"},"process":"dreg_prep","mem":{"mean":54119228416,"min":39014690816,"q1":42013980672,"q2":57278824448,"q3":64286953472,"max":67544567808,"minLabel":"dreg_prep (Eric37_rep2)","maxLabel":"dreg_prep (Ethan37_rep1)","q1Label":"dreg_prep (Eric42_rep2)","q2Label":"dreg_prep (Ethan37_rep2)","q3Label":"dreg_prep (Eric42_rep1)"},"memUsage":{"mean":84,"min":60.56,"q1":65.21,"q2":88.91,"q3":99.79,"max":104.84,"minLabel":"dreg_prep (Eric37_rep2)","maxLabel":"dreg_prep (Ethan37_rep1)","q1Label":"dreg_prep (Eric42_rep2)","q2Label":"dreg_prep (Ethan37_rep2)","q3Label":"dreg_prep (Eric42_rep1)"},"timeUsage":{"mean":18.94,"min":12.58,"q1":13.73,"q2":19.13,"q3":22.86,"max":26.3,"minLabel":"dreg_prep (Eric42_rep2)","maxLabel":"dreg_prep (Ethan37_rep1)","q1Label":"dreg_prep (Ethan42_rep2)","q2Label":"dreg_prep (Ethan37_rep2)","q3Label":"dreg_prep (Ethan42_rep1)"},"vmem":{"mean":60473014272,"min":42951106560,"q1":46097740800,"q2":64307499008,"q3":72673845248,"max":75483648000,"minLabel":"dreg_prep (Eric37_rep2)","maxLabel":"dreg_prep (Ethan37_rep1)","q1Label":"dreg_prep (Eric42_rep2)","q2Label":"dreg_prep (Ethan37_rep2)","q3Label":"dreg_prep (Eric42_rep1)"},"reads":{"mean":51043027393.88,"min":35912774396,"q1":38469815592.25,"q2":53605688166,"q3":61954417875.5,"max":64958837152,"minLabel":"dreg_prep (Eric42_rep2)","maxLabel":"dreg_prep (Ethan37_rep1)","q1Label":"dreg_prep (Eric37_rep2)","q2Label":"dreg_prep (Ethan37_rep2)","q3Label":"dreg_prep (Eric42_rep1)"},"cpu":{"mean":102.15,"min":100.8,"q1":100.95,"q2":101.5,"q3":102.6,"max":105.4,"minLabel":"dreg_prep (Eric42_rep1)","maxLabel":"dreg_prep (Eric37_rep2)","q1Label":"dreg_prep (Ethan37_rep1)","q2Label":"dreg_prep (Eric42_rep2)","q3Label":"dreg_prep (Eric37_rep1)"},"time":{"mean":2726655.38,"min":1810823,"q1":1977619.5,"q2":2755327,"q3":3291580,"max":3787846,"minLabel":"dreg_prep (Eric42_rep2)","maxLabel":"dreg_prep (Ethan37_rep1)","q1Label":"dreg_prep (Ethan42_rep2)","q2Label":"dreg_prep (Ethan37_rep2)","q3Label":"dreg_prep (Ethan42_rep1)"},"writes":{"mean":36128576603.75,"min":25714321105,"q1":27424959697.5,"q2":38010381419.5,"q3":43563581717,"max":45808131500,"minLabel":"dreg_prep (Eric42_rep2)","maxLabel":"dreg_prep (Ethan37_rep1)","q1Label":"dreg_prep (Eric37_rep2)","q2Label":"dreg_prep (Ethan37_rep2)","q3Label":"dreg_prep (Eric42_rep1)"}}]
+Aug-31 13:18:15.916 [main] DEBUG nextflow.trace.TimelineObserver - Flow completing -- rendering html timeline
+Aug-31 13:18:16.480 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Aug-31 13:18:16.524 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,83 @@
+
+* to do
+>done
+
+
+Fig1
+done
+
+
+Fig2
+>gene traces
+scripts
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/gene_figures/pyGenomeTracks_hspb1.sbatch
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/gene_figures/pyGenomeTracks_serpinh1.sbatch
+output
+/Shares/down/heatshock/analysis_June2022/figures/ATAC/
+*TFEA plots (waiting on Tfit)
+TFEA MA plot D21, TFEA MA plot T21, TFEA scatter D21 and T21
+scripts
+output
+*metaplot of ATAC over HSF1 binding sites
+scripts
+output
+
+Fig2 supp
+*enrich heatmaps
+scripts
+output
+
+*four TFEA pvals plot
+scripts
+output
+
+
+
+
+
+Fig3
+*PRO-seq gene traces (not waiting on anything)
+scripts
+output
+>bar plot n differentail genes
+scripts
+/Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/PROseq_gene_diffexp/PROseq_genes_that_respond_to_heatshock.ipynb
+https://fiji-viz.colorado.edu/jupyterhub/user/allenma/notebooks/heatshock/PROseq_genes_that_respond_to_heatshock.ipynb
+output
+/Shares/down/heatshock/analysis_June2022/outfiles/PRO/gene_counts_and_diffexp/body_only/graphs/
+/Shares/down/heatshock/analysis_June2022/figures/PRO/
+*metaplot over hsf1 (waiting on Tfit)
+scripts
+output
+*TFEA (waiting on Tfit) 
+TFEA MA plot D21, TFEA MA plot T21, TFEA scatter D21 and T21
+scripts
+output
+
+
+Fig3 supp
+
+>volcanso of genes 
+scripts
+https://fiji-viz.colorado.edu/jupyterhub/user/allenma/notebooks/heatshock/PROseq_genes_that_respond_to_heatshock.ipynb
+output
+/Shares/down/heatshock/analysis_June2022/outfiles/PRO/gene_counts_and_diffexp/body_only/graphs/
+/Shares/down/heatshock/analysis_June2022/figures/PRO/
+*gene scatter (not waiting on anything)
+scripts
+output
+*enrich heatmaps (waiting on Tfit)
+scripts
+output
+>hs genes bar graphs
+scripts
+https://fiji-viz.colorado.edu/jupyterhub/user/allenma/notebooks/heatshock/PROseq_genes_that_respond_to_heatshock.ipynb
+output
+/Shares/down/heatshock/analysis_June2022/outfiles/PRO/gene_counts_and_diffexp/body_only/graphs/
+/Shares/down/heatshock/analysis_June2022/figures/PRO/
+
+
+
+Fig 4
+
+

@@ -1,0 +1,252 @@
+Aug-30 16:38:31.490 [main] DEBUG nextflow.cli.Launcher - $> nextflow run /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/main.nf -profile hg38 --crams '/Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/*.sorted.cram' --workdir /scratch/Users/allenma/temp/ --outdir /Shares/down/heatshock/analysis_June2022/outfiles/PRO/BedgraphsandBigwigs_human/ --saveall -resume
+Aug-30 16:38:31.649 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.4
+Aug-30 16:38:31.767 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/nextflow.config
+Aug-30 16:38:31.770 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/nextflow.config
+Aug-30 16:38:31.815 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `hg38`
+Aug-30 16:38:33.639 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [equCab3, saCer3, Pfalci, rheMac8, none, mm10, dm6, canFam4, susScr11, ce10, EF2, Ttherm, minimal, hg38, panTro6, EB1, TAIR10, R64_1_1, myoLuc2, rn6, MEv6, criGriChoV2, AGPv4]
+Aug-30 16:38:33.702 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 by probing script field
+Aug-30 16:38:33.746 [main] INFO  nextflow.cli.CmdRun - Launching `/Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/main.nf` [backstabbing_swirles] DSL1 - revision: 094529aa45
+Aug-30 16:38:33.787 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/Users/allenma/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Aug-30 16:38:33.789 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-30 16:38:33.808 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-30 16:38:33.810 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-30 16:38:33.817 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Aug-30 16:38:33.834 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-30 16:38:33.925 [main] DEBUG nextflow.Session - Session uuid: 6f63bf6d-23f1-4cd2-b97c-e6072c56b182
+Aug-30 16:38:33.925 [main] DEBUG nextflow.Session - Run name: backstabbing_swirles
+Aug-30 16:38:33.926 [main] DEBUG nextflow.Session - Executor pool size: 64
+Aug-30 16:38:33.961 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.4 build 5706
+  Created: 19-06-2022 20:51 UTC (14:51 MDT)
+  System: Linux 3.10.0-1160.59.1.el7.x86_64
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 1.8.0_292-b10
+  Encoding: UTF-8 (UTF-8)
+  Process: 15220@fijinode-42 [10.224.32.62]
+  CPUs: 64 - Mem: 503.7 GB (188.4 GB) - Swap: 32 GB (31.4 GB)
+Aug-30 16:38:34.044 [main] DEBUG nextflow.Session - Work-dir: /scratch/Users/allenma/temp [fhgfs]
+Aug-30 16:38:34.071 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-30 16:38:34.089 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-30 16:38:34.189 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-30 16:38:34.209 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Aug-30 16:38:34.375 [main] DEBUG nextflow.Session - Session start invoked
+Aug-30 16:38:34.381 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Shares/down/heatshock/analysis_June2022/outfiles/PRO/BedgraphsandBigwigs_human/pipeline_info/downfile_pipeline_trace.txt
+Aug-30 16:38:36.041 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-30 16:38:36.096 [main] INFO  nextflow.Nextflow - ========================================
+Downfile Pipeline v1.0"
+========================================
+Aug-30 16:38:36.133 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `savebam` -- Initialise it to a default value eg. `params.savebam = some_value`
+Aug-30 16:38:36.144 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `max_memory` -- Initialise it to a default value eg. `params.max_memory = some_value`
+Aug-30 16:38:36.157 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `max_cpus` -- Initialise it to a default value eg. `params.max_cpus = some_value`
+Aug-30 16:38:36.174 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `max_time` -- Initialise it to a default value eg. `params.max_time = some_value`
+Aug-30 16:38:36.191 [main] INFO  nextflow.Nextflow - Pipeline Name  : Downfile Pipeline
+Help Message   : false
+Pipeline Version: 1.0
+Run Name       : backstabbing_swirles
+CRAMs          : /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/*.sorted.cram
+Genome Ref     : /scratch/Shares/dowell/genomes/hg38/hg38.fa
+Chromosome sizes: /scratch/Shares/dowell/genomes/hg38/hg38.chrom.sizes
+Data Type      : Paired-End
+Save bams      : YES
+Save bedgraphs : YES
+Save tfit bedgraphs: YES
+Save vis bigwigs: YES
+Save dreg bigwigs: YES
+Save tdfs      : YES
+Max Memory     : null
+Max CPUs       : null
+Max Time       : null
+Output dir     : /Shares/down/heatshock/analysis_June2022/outfiles/PRO/BedgraphsandBigwigs_human/
+Working dir    : /scratch/Users/allenma/temp
+Container Engine: null
+Current home   : /Users/allenma
+Current user   : allenma
+Current path   : /Shares/down/heatshock/analysis_June2022/scripts/T21HSscripts/runNextflows
+Script dir     : /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline
+Config Profile : hg38
+Aug-30 16:38:36.396 [main] INFO  nextflow.Nextflow - =======================================================
+Aug-30 16:38:36.512 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-30 16:38:36.512 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-30 16:38:36.526 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Aug-30 16:38:36.535 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Aug-30 16:38:36.542 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Aug-30 16:38:36.922 [main] INFO  nextflow.script.BaseScript - [Log 1]: Converting CRAM files to BAM files
+Aug-30 16:38:36.925 [main] INFO  nextflow.script.BaseScript - [Log 1]: Genome file being used ..... /scratch/Shares/dowell/genomes/hg38/hg38.fa 
+Aug-30 16:38:36.925 [main] INFO  nextflow.script.BaseScript - [Log 1]: Cram file directory ........ /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/*.sorted.cram
+Aug-30 16:38:36.925 [main] INFO  nextflow.script.BaseScript - [Log 1]: Working directory ... /scratch/Users/allenma/temp/
+Aug-30 16:38:36.925 [main] INFO  nextflow.script.BaseScript - [Log 1]: Output directory ... /Shares/down/heatshock/analysis_June2022/outfiles/PRO/BedgraphsandBigwigs_human/
+Aug-30 16:38:36.943 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /Shares/down/heatshock/analysis_June2022/outfiles/PRO/Nascentflow_human/mapped/crams/; pattern: *.sorted.cram; options: [:]
+Aug-30 16:38:37.021 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-30 16:38:37.021 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-30 16:38:37.036 [main] INFO  nextflow.script.BaseScript - [Log 1]: Sorting BAM files
+Aug-30 16:38:37.037 [main] INFO  nextflow.script.BaseScript - [Log 1]: Collecting mapstats
+Aug-30 16:38:37.059 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-30 16:38:37.060 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-30 16:38:37.074 [main] INFO  nextflow.script.BaseScript - [Log 1]: Filtering multimapped reads for Tfit
+Aug-30 16:38:37.262 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [7e/67981b] Cached process > get_software_versions
+Aug-30 16:38:37.262 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [4f/567b56] Cached process > cram_to_bam (Ethan37_rep1)
+Aug-30 16:38:37.262 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [83/bb0ab9] Cached process > cram_to_bam (Eric37_rep1)
+Aug-30 16:38:37.262 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [43/9c1020] Cached process > cram_to_bam (Eric37_rep2)
+Aug-30 16:38:37.262 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [8e/08f3e5] Cached process > cram_to_bam (Ethan42_rep1)
+Aug-30 16:38:37.262 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [a3/fe6599] Cached process > cram_to_bam (Ethan37_rep2)
+Aug-30 16:38:37.262 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [b3/48ddcb] Cached process > cram_to_bam (Eric42_rep1)
+Aug-30 16:38:37.262 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [8c/2ffd2c] Cached process > cram_to_bam (Eric42_rep2)
+Aug-30 16:38:37.267 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [5d/d98ecc] Cached process > cram_to_bam (Ethan42_rep2)
+Aug-30 16:38:37.280 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-30 16:38:37.280 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-30 16:38:37.287 [main] INFO  nextflow.script.BaseScript - [Log 2]: Generating FStitch/Tfit bedgraphs
+Aug-30 16:38:37.288 [main] INFO  nextflow.script.BaseScript - [Log 2]: Genome information ..... /scratch/Shares/dowell/genomes/hg38/hg38.fa 
+Aug-30 16:38:37.290 [main] INFO  nextflow.script.BaseScript - [Log 2]: Chromosome Sizes ....... /scratch/Shares/dowell/genomes/hg38/hg38.chrom.sizes
+Aug-30 16:38:37.300 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-30 16:38:37.300 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-30 16:38:37.310 [main] INFO  nextflow.script.BaseScript - [Log 2]: Generating normalized bedgraphs
+Aug-30 16:38:37.311 [main] INFO  nextflow.script.BaseScript - [Log 2]: Genome information ..... /scratch/Shares/dowell/genomes/hg38/hg38.fa 
+Aug-30 16:38:37.311 [main] INFO  nextflow.script.BaseScript - [Log 2]: Chromosome Sizes ....... /scratch/Shares/dowell/genomes/hg38/hg38.chrom.sizes
+Aug-30 16:38:37.318 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-30 16:38:37.319 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-30 16:38:37.327 [main] INFO  nextflow.script.BaseScript - [Log 3]: Generating normalized bigwig files for visualization
+Aug-30 16:38:37.334 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-30 16:38:37.334 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-30 16:38:37.342 [main] INFO  nextflow.script.BaseScript - [Log 4]: Generating bigwig files for dREG
+Aug-30 16:38:37.353 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-30 16:38:37.353 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-30 16:38:37.362 [main] INFO  nextflow.script.BaseScript - Log[5]: Generating TDFs
+Aug-30 16:38:37.366 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-30 16:38:37.366 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-30 16:38:37.374 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: cram_to_bam, dreg_prep, samtools, tfit_bedgraphs, get_software_versions, norm_bedgraphs, igvtools, normalized_bigwigs, bam_conversion_tfit
+Aug-30 16:38:37.376 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Aug-30 16:38:37.376 [main] DEBUG nextflow.Session - Session await
+Aug-30 16:38:37.379 [Actor Thread 41] INFO  nextflow.processor.TaskProcessor - [6d/5ee2a5] Cached process > samtools (Eric42_rep2)
+Aug-30 16:38:37.380 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [a5/a2622b] Cached process > samtools (Eric37_rep2)
+Aug-30 16:38:37.395 [Actor Thread 43] INFO  nextflow.processor.TaskProcessor - [45/1fa8ad] Cached process > samtools (Ethan37_rep2)
+Aug-30 16:38:37.400 [Actor Thread 45] INFO  nextflow.processor.TaskProcessor - [1d/5f390b] Cached process > samtools (Ethan42_rep2)
+Aug-30 16:38:37.426 [Actor Thread 41] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=4; maxSize=4; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Aug-30 16:38:37.620 [Actor Thread 48] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 1; slices: 1; internal sort time: 0.002 s; external sort time: 0.003 s; total time: 0.005 s
+Aug-30 16:38:37.621 [Actor Thread 48] DEBUG nextflow.file.FileCollector - >> temp file exists? false
+Aug-30 16:38:37.621 [Actor Thread 48] DEBUG nextflow.file.FileCollector - Missed collect-file cache -- cause: java.nio.file.NoSuchFileException: /tmp/5cedabece47e2009790fdaff508f9201.collect-file
+Aug-30 16:38:37.640 [Actor Thread 48] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /tmp/5cedabece47e2009790fdaff508f9201.collect-file
+Aug-30 16:38:37.642 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process samtools (Ethan42_rep1) > jobId: 8644944; workDir: /scratch/Users/allenma/temp/b7/1ed3f4fd41f70e7542b0f550544d2f
+Aug-30 16:38:37.642 [Task submitter] INFO  nextflow.Session - [b7/1ed3f4] Submitted process > samtools (Ethan42_rep1)
+Aug-30 16:38:37.653 [Actor Thread 48] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-6884593373984772287
+Aug-30 16:38:37.870 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process samtools (Eric37_rep1) > jobId: 8644945; workDir: /scratch/Users/allenma/temp/c9/657e395bdd37d1824813d527a5f0bc
+Aug-30 16:38:37.870 [Task submitter] INFO  nextflow.Session - [c9/657e39] Submitted process > samtools (Eric37_rep1)
+Aug-30 16:38:37.982 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process samtools (Eric42_rep1) > jobId: 8644946; workDir: /scratch/Users/allenma/temp/b5/f0d01fbe3e6b7d0bf592bafeb508b0
+Aug-30 16:38:37.982 [Task submitter] INFO  nextflow.Session - [b5/f0d01f] Submitted process > samtools (Eric42_rep1)
+Aug-30 16:38:38.497 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process samtools (Ethan37_rep1) > jobId: 8644947; workDir: /scratch/Users/allenma/temp/04/746cf52b9b0dba96d2da21ba652a08
+Aug-30 16:38:38.497 [Task submitter] INFO  nextflow.Session - [04/746cf5] Submitted process > samtools (Ethan37_rep1)
+Aug-30 16:38:38.582 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process bam_conversion_tfit (Ethan37_rep2) > jobId: 8644948; workDir: /scratch/Users/allenma/temp/4f/7250a7a24dc7377620be026655cd77
+Aug-30 16:38:38.582 [Task submitter] INFO  nextflow.Session - [4f/7250a7] Submitted process > bam_conversion_tfit (Ethan37_rep2)
+Aug-30 16:38:38.658 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process bam_conversion_tfit (Eric37_rep2) > jobId: 8644949; workDir: /scratch/Users/allenma/temp/81/8902aba3cf12517a957a80a2450e99
+Aug-30 16:38:38.658 [Task submitter] INFO  nextflow.Session - [81/8902ab] Submitted process > bam_conversion_tfit (Eric37_rep2)
+Aug-30 16:38:38.967 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process bam_conversion_tfit (Ethan42_rep2) > jobId: 8644950; workDir: /scratch/Users/allenma/temp/7d/adfd062e06c5aee8372b4e15f9b057
+Aug-30 16:38:38.968 [Task submitter] INFO  nextflow.Session - [7d/adfd06] Submitted process > bam_conversion_tfit (Ethan42_rep2)
+Aug-30 16:38:39.029 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process dreg_prep (Eric37_rep2) > jobId: 8644951; workDir: /scratch/Users/allenma/temp/72/665fa5d7fb5ecdb7b4a309395aaad9
+Aug-30 16:38:39.029 [Task submitter] INFO  nextflow.Session - [72/665fa5] Submitted process > dreg_prep (Eric37_rep2)
+Aug-30 16:38:39.088 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process norm_bedgraphs (Ethan42_rep2) > jobId: 8644952; workDir: /scratch/Users/allenma/temp/f5/13a7bd8e496d04ca97e427d6e572ae
+Aug-30 16:38:39.089 [Task submitter] INFO  nextflow.Session - [f5/13a7bd] Submitted process > norm_bedgraphs (Ethan42_rep2)
+Aug-30 16:38:39.168 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process bam_conversion_tfit (Eric42_rep2) > jobId: 8644953; workDir: /scratch/Users/allenma/temp/36/aacfad38893ac8fff864cd689bcfd7
+Aug-30 16:38:39.168 [Task submitter] INFO  nextflow.Session - [36/aacfad] Submitted process > bam_conversion_tfit (Eric42_rep2)
+Aug-30 16:38:39.491 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process norm_bedgraphs (Eric37_rep2) > jobId: 8644954; workDir: /scratch/Users/allenma/temp/c9/374d9f10be8c8aeaa3b411aa54b229
+Aug-30 16:38:39.491 [Task submitter] INFO  nextflow.Session - [c9/374d9f] Submitted process > norm_bedgraphs (Eric37_rep2)
+Aug-30 16:38:39.562 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process dreg_prep (Ethan37_rep2) > jobId: 8644955; workDir: /scratch/Users/allenma/temp/04/690d936ba53de4d63599220f2e26c0
+Aug-30 16:38:39.562 [Task submitter] INFO  nextflow.Session - [04/690d93] Submitted process > dreg_prep (Ethan37_rep2)
+Aug-30 16:38:39.649 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process dreg_prep (Eric42_rep2) > jobId: 8644956; workDir: /scratch/Users/allenma/temp/de/7dc7c51d1178f2af6ecd08a64a086b
+Aug-30 16:38:39.649 [Task submitter] INFO  nextflow.Session - [de/7dc7c5] Submitted process > dreg_prep (Eric42_rep2)
+Aug-30 16:38:40.055 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process norm_bedgraphs (Eric42_rep2) > jobId: 8644957; workDir: /scratch/Users/allenma/temp/14/d144f90ad2dededf935152af364a9c
+Aug-30 16:38:40.055 [Task submitter] INFO  nextflow.Session - [14/d144f9] Submitted process > norm_bedgraphs (Eric42_rep2)
+Aug-30 16:38:40.152 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process norm_bedgraphs (Ethan37_rep2) > jobId: 8644958; workDir: /scratch/Users/allenma/temp/73/231ca7fe1564652c6429c76c9e3007
+Aug-30 16:38:40.152 [Task submitter] INFO  nextflow.Session - [73/231ca7] Submitted process > norm_bedgraphs (Ethan37_rep2)
+Aug-30 16:38:40.466 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process dreg_prep (Ethan42_rep2) > jobId: 8644959; workDir: /scratch/Users/allenma/temp/4d/edb2919abe36ea1f96c447e46d2508
+Aug-30 16:38:40.467 [Task submitter] INFO  nextflow.Session - [4d/edb291] Submitted process > dreg_prep (Ethan42_rep2)
+Aug-30 16:43:41.582 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 16 -- submitted tasks are shown below
+~> TaskHandler[jobId: 8644944; id: 10; name: samtools (Ethan42_rep1); status: SUBMITTED; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b7/1ed3f4fd41f70e7542b0f550544d2f started: -; exited: -; ]
+~> TaskHandler[jobId: 8644945; id: 12; name: samtools (Eric37_rep1); status: SUBMITTED; exit: -; error: -; workDir: /scratch/Users/allenma/temp/c9/657e395bdd37d1824813d527a5f0bc started: -; exited: -; ]
+~> TaskHandler[jobId: 8644946; id: 13; name: samtools (Eric42_rep1); status: SUBMITTED; exit: -; error: -; workDir: /scratch/Users/allenma/temp/b5/f0d01fbe3e6b7d0bf592bafeb508b0 started: -; exited: -; ]
+~> TaskHandler[jobId: 8644947; id: 15; name: samtools (Ethan37_rep1); status: SUBMITTED; exit: -; error: -; workDir: /scratch/Users/allenma/temp/04/746cf52b9b0dba96d2da21ba652a08 started: -; exited: -; ]
+~> TaskHandler[jobId: 8644948; id: 26; name: bam_conversion_tfit (Ethan37_rep2); status: SUBMITTED; exit: -; error: -; workDir: /scratch/Users/allenma/temp/4f/7250a7a24dc7377620be026655cd77 started: -; exited: -; ]
+~> TaskHandler[jobId: 8644949; id: 23; name: bam_conversion_tfit (Eric37_rep2); status: SUBMITTED; exit: -; error: -; workDir: /scratch/Users/allenma/temp/81/8902aba3cf12517a957a80a2450e99 started: -; exited: -; ]
+~> TaskHandler[jobId: 8644950; id: 29; name: bam_conversion_tfit (Ethan42_rep2); status: SUBMITTED; exit: -; error: -; workDir: /scratch/Users/allenma/temp/7d/adfd062e06c5aee8372b4e15f9b057 started: -; exited: -; ]
+~> TaskHandler[jobId: 8644951; id: 22; name: dreg_prep (Eric37_rep2); status: SUBMITTED; exit: -; error: -; workDir: /scratch/Users/allenma/temp/72/665fa5d7fb5ecdb7b4a309395aaad9 started: -; exited: -; ]
+~> TaskHandler[jobId: 8644952; id: 27; name: norm_bedgraphs (Ethan42_rep2); status: RUNNING; exit: -; error: -; workDir: /scratch/Users/allenma/temp/f5/13a7bd8e496d04ca97e427d6e572ae started: 1661899146567; exited: -; ]
+~> TaskHandler[jobId: 8644953; id: 21; name: bam_conversion_tfit (Eric42_rep2); status: SUBMITTED; exit: -; error: -; workDir: /scratch/Users/allenma/temp/36/aacfad38893ac8fff864cd689bcfd7 started: -; exited: -; ]
+.. remaining tasks omitted.
+Aug-30 16:45:11.612 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 8644957; id: 18; name: norm_bedgraphs (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/14/d144f90ad2dededf935152af364a9c started: 1661899146587; exited: 2022-08-30T22:45:07Z; ]
+Aug-30 16:45:11.699 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process igvtools (Eric42_rep2) > jobId: 8644962; workDir: /scratch/Users/allenma/temp/da/4a10a19abff18521d7ff57e4de4da9
+Aug-30 16:45:11.700 [Task submitter] INFO  nextflow.Session - [da/4a10a1] Submitted process > igvtools (Eric42_rep2)
+Aug-30 16:45:11.742 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process normalized_bigwigs (Eric42_rep2) > jobId: 8644963; workDir: /scratch/Users/allenma/temp/76/c6331b56690e2880977725258628b9
+Aug-30 16:45:11.743 [Task submitter] INFO  nextflow.Session - [76/c6331b] Submitted process > normalized_bigwigs (Eric42_rep2)
+Aug-30 16:45:16.607 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 8644954; id: 20; name: norm_bedgraphs (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/c9/374d9f10be8c8aeaa3b411aa54b229 started: 1661899146576; exited: 2022-08-30T22:45:16Z; ]
+Aug-30 16:45:16.667 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process igvtools (Eric37_rep2) > jobId: 8644964; workDir: /scratch/Users/allenma/temp/2a/4417842116f6339ec2c1586933f558
+Aug-30 16:45:16.667 [Task submitter] INFO  nextflow.Session - [2a/441784] Submitted process > igvtools (Eric37_rep2)
+Aug-30 16:45:16.703 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process normalized_bigwigs (Eric37_rep2) > jobId: 8644965; workDir: /scratch/Users/allenma/temp/ec/c2014c9b62d03574571f8d8668a78a
+Aug-30 16:45:16.704 [Task submitter] INFO  nextflow.Session - [ec/c2014c] Submitted process > normalized_bigwigs (Eric37_rep2)
+Aug-30 16:45:36.617 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 8644962; id: 31; name: igvtools (Eric42_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/da/4a10a19abff18521d7ff57e4de4da9 started: 1661899536605; exited: 2022-08-30T22:45:36Z; ]
+Aug-30 16:45:36.663 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 8644963; id: 30; name: normalized_bigwigs (Eric42_rep2); status: COMPLETED; exit: 255; error: -; workDir: /scratch/Users/allenma/temp/76/c6331b56690e2880977725258628b9 started: 1661899536653; exited: 2022-08-30T22:45:35Z; ]
+Aug-30 16:45:36.718 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'normalized_bigwigs (Eric42_rep2)'
+
+Caused by:
+  Process `normalized_bigwigs (Eric42_rep2)` terminated with an error exit status (255)
+
+Command executed:
+
+  /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/bin/bedGraphToBigWig Eric42_rep2.pos.rcc.bedGraph /scratch/Shares/dowell/genomes/hg38/hg38.chrom.sizes Eric42_rep2.pos.rcc.bw
+  /Shares/down/heatshock/analysis_June2022/scripts/Nextflows/Downfile_pipeline/bin/bedGraphToBigWig Eric42_rep2.neg.rcc.bedGraph /scratch/Shares/dowell/genomes/hg38/hg38.chrom.sizes Eric42_rep2.neg.rcc.bw
+
+Command exit status:
+  255
+
+Command output:
+  (empty)
+
+Command error:
+  needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+
+Work dir:
+  /scratch/Users/allenma/temp/76/c6331b56690e2880977725258628b9
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Aug-30 16:45:36.845 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `normalized_bigwigs (Eric42_rep2)` terminated with an error exit status (255)
+Aug-30 16:45:36.875 [Task monitor] DEBUG nextflow.Session - The following nodes are still active:
+[process] bam_conversion_tfit
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] tfit_bedgraphs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] norm_bedgraphs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] normalized_bigwigs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] dreg_prep
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] igvtools
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Aug-30 16:45:36.883 [main] DEBUG nextflow.Session - Session await > all process finished
+Aug-30 16:45:36.885 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Aug-30 16:45:36.897 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 8644964; id: 33; name: igvtools (Eric37_rep2); status: COMPLETED; exit: 0; error: -; workDir: /scratch/Users/allenma/temp/2a/4417842116f6339ec2c1586933f558 started: 1661899536887; exited: 2022-08-30T22:45:36Z; ]
+Aug-30 16:45:36.931 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 8644965; id: 32; name: normalized_bigwigs (Eric37_rep2); status: COMPLETED; exit: 255; error: -; workDir: /scratch/Users/allenma/temp/ec/c2014c9b62d03574571f8d8668a78a started: 1661899536921; exited: 2022-08-30T22:45:35Z; ]
+Aug-30 16:45:37.020 [main] INFO  nextflow.Nextflow - Downfile Pipeline Complete
+Aug-30 16:45:37.029 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (14)
+Aug-30 16:45:37.073 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=4; failedCount=2; ignoredCount=0; cachedCount=13; pendingCount=0; submittedCount=11; runningCount=-11; retriesCount=0; abortedCount=14; succeedDuration=12m 14s; failedDuration=17ms; cachedDuration=7h 21m 38s;loadCpus=-176; loadMemory=0; peakRunning=5; peakCpus=20; peakMemory=220 GB; ]
+Aug-30 16:45:37.073 [main] DEBUG nextflow.trace.TraceFileObserver - Flow completing -- flushing trace file
+Aug-30 16:45:37.077 [main] DEBUG nextflow.trace.ReportObserver - Flow completing -- rendering html report
+Aug-30 16:45:37.175 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":{"mean":27.7,"min":21.46,"q1":23.07,"q2":27.19,"q3":29.99,"max":39.73,"minLabel":"cram_to_bam (Eric42_rep2)","maxLabel":"cram_to_bam (Eric37_rep1)","q1Label":"cram_to_bam (Eric37_rep2)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"process":"cram_to_bam","mem":{"mean":805419520,"min":726659072,"q1":792648704,"q2":818622464,"q3":828139520,"max":869003264,"minLabel":"cram_to_bam (Ethan42_rep2)","maxLabel":"cram_to_bam (Eric42_rep1)","q1Label":"cram_to_bam (Ethan42_rep1)","q2Label":"cram_to_bam (Ethan37_rep1)","q3Label":"cram_to_bam (Eric42_rep2)"},"memUsage":{"mean":15,"min":13.54,"q1":14.76,"q2":15.25,"q3":15.43,"max":16.19,"minLabel":"cram_to_bam (Ethan42_rep2)","maxLabel":"cram_to_bam (Eric42_rep1)","q1Label":"cram_to_bam (Ethan42_rep1)","q2Label":"cram_to_bam (Ethan37_rep1)","q3Label":"cram_to_bam (Eric42_rep2)"},"timeUsage":{"mean":2.34,"min":1.9,"q1":2.12,"q2":2.24,"q3":2.63,"max":2.77,"minLabel":"cram_to_bam (Eric37_rep1)","maxLabel":"cram_to_bam (Ethan42_rep1)","q1Label":"cram_to_bam (Eric37_rep2)","q2Label":"cram_to_bam (Eric42_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"vmem":{"mean":1998610432,"min":1905782784,"q1":1980621824,"q2":2015158272,"q3":2023168000,"max":2077835264,"minLabel":"cram_to_bam (Ethan42_rep2)","maxLabel":"cram_to_bam (Eric42_rep1)","q1Label":"cram_to_bam (Ethan42_rep1)","q2Label":"cram_to_bam (Ethan37_rep1)","q3Label":"cram_to_bam (Eric42_rep2)"},"reads":{"mean":5381894629.88,"min":4640104037,"q1":4751777163,"q2":5499029382,"q3":5963191707.75,"max":6023524755,"minLabel":"cram_to_bam (Eric37_rep2)","maxLabel":"cram_to_bam (Ethan37_rep1)","q1Label":"cram_to_bam (Eric42_rep2)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"cpu":{"mean":443.19,"min":343.4,"q1":369.13,"q2":435.05,"q3":479.85,"max":635.7,"minLabel":"cram_to_bam (Eric42_rep2)","maxLabel":"cram_to_bam (Eric37_rep1)","q1Label":"cram_to_bam (Eric37_rep2)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"time":{"mean":126478,"min":102691,"q1":114693.25,"q2":121219.5,"q3":141866,"max":149823,"minLabel":"cram_to_bam (Eric37_rep1)","maxLabel":"cram_to_bam (Ethan42_rep1)","q1Label":"cram_to_bam (Eric37_rep2)","q2Label":"cram_to_bam (Eric42_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"},"writes":{"mean":5428788934.13,"min":3585623340,"q1":3889879217,"q2":5659081423.5,"q3":6856395049.5,"max":7046675610,"minLabel":"cram_to_bam (Eric42_rep2)","maxLabel":"cram_to_bam (Ethan37_rep1)","q1Label":"cram_to_bam (Eric37_rep2)","q2Label":"cram_to_bam (Ethan37_rep2)","q3Label":"cram_to_bam (Eric42_rep1)"}},{"cpuUsage":{"mean":70.9,"min":70.9,"q1":70.9,"q2":70.9,"q3":70.9,"max":70.9,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"process":"get_software_versions","mem":{"mean":1601536,"min":1601536,"q1":1601536,"q2":1601536,"q3":1601536,"max":1601536,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"memUsage":null,"timeUsage":{"mean":0.02,"min":0.02,"q1":0.02,"q2":0.02,"q3":0.02,"max":0.02,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"vmem":{"mean":116019200,"min":116019200,"q1":116019200,"q2":116019200,"q3":116019200,"max":116019200,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"reads":{"mean":17799022,"min":17799022,"q1":17799022,"q2":17799022,"q3":17799022,"max":17799022,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"cpu":{"mean":70.9,"min":70.9,"q1":70.9,"q2":70.9,"q3":70.9,"max":70.9,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"time":{"mean":820,"min":820,"q1":820,"q2":820,"q3":820,"max":820,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"},"writes":{"mean":1185,"min":1185,"q1":1185,"q2":1185,"q3":1185,"max":1185,"minLabel":"get_software_versions","maxLabel":"get_software_versions","q1Label":"get_software_versions","q2Label":"get_software_versions","q3Label":"get_software_versions"}},{"cpuUsage":{"mean":7.14,"min":6.81,"q1":7.03,"q2":7.19,"q3":7.3,"max":7.38,"minLabel":"samtools (Ethan37_rep2)","maxLabel":"samtools (Eric42_rep2)","q1Label":"samtools (Ethan37_rep2)","q2Label":"samtools (Eric37_rep2)","q3Label":"samtools (Ethan42_rep2)"},"process":"samtools","mem":{"mean":9834496,"min":8585216,"q1":8708096,"q2":8802304,"q3":9928704,"max":13148160,"minLabel":"samtools (Ethan42_rep2)","maxLabel":"samtools (Eric37_rep2)","q1Label":"samtools (Ethan42_rep2)","q2Label":"samtools (Eric42_rep2)","q3Label":"samtools (Ethan37_rep2)"},"memUsage":{"mean":0.02,"min":0.01,"q1":0.01,"q2":0.01,"q3":0.02,"max":0.02,"minLabel":"samtools (Ethan42_rep2)","maxLabel":"samtools (Eric37_rep2)","q1Label":"samtools (Ethan42_rep2)","q2Label":"samtools (Eric42_rep2)","q3Label":"samtools (Ethan37_rep2)"},"timeUsage":null,"vmem":{"mean":1448932352,"min":1432846336,"q1":1432846336,"q2":1432846336,"q3":1448932352,"max":1497190400,"minLabel":"samtools (Eric42_rep2)","maxLabel":"samtools (Eric37_rep2)","q1Label":"samtools (Eric42_rep2)","q2Label":"samtools (Ethan37_rep2)","q3Label":"samtools (Ethan42_rep2)"},"reads":{"mean":7939305435.25,"min":7171534530,"q1":7363527366,"q2":7662539192.5,"q3":8238317261.75,"max":9260608826,"minLabel":"samtools (Eric42_rep2)","maxLabel":"samtools (Ethan37_rep2)","q1Label":"samtools (Eric42_rep2)","q2Label":"samtools (Eric37_rep2)","q3Label":"samtools (Ethan42_rep2)"},"cpu":{"mean":114.28,"min":109,"q1":112.45,"q2":115.05,"q3":116.88,"max":118,"minLabel":"samtools (Ethan37_rep2)","maxLabel":"samtools (Eric42_rep2)","q1Label":"samtools (Ethan37_rep2)","q2Label":"samtools (Eric37_rep2)","q3Label":"samtools (Ethan42_rep2)"},"time":{"mean":161070,"min":148864,"q1":150028.75,"q2":154794,"q3":165835.25,"max":185828,"minLabel":"samtools (Eric42_rep2)","maxLabel":"samtools (Ethan37_rep2)","q1Label":"samtools (Eric42_rep2)","q2Label":"samtools (Eric37_rep2)","q3Label":"samtools (Ethan42_rep2)"},"writes":{"mean":23853.5,"min":23851,"q1":23852.5,"q2":23853,"q3":23854,"max":23857,"minLabel":"samtools (Ethan42_rep2)","maxLabel":"samtools (Ethan37_rep2)","q1Label":"samtools (Ethan42_rep2)","q2Label":"samtools (Eric42_rep2)","q3Label":"samtools (Eric37_rep2)"}},{"cpuUsage":{"mean":46,"min":45.5,"q1":45.75,"q2":46,"q3":46.25,"max":46.5,"minLabel":"norm_bedgraphs (Eric37_rep2)","maxLabel":"norm_bedgraphs (Eric42_rep2)","q1Label":"norm_bedgraphs (Eric37_rep2)","q2Label":"norm_bedgraphs (Eric37_rep2)","q3Label":"norm_bedgraphs (Eric37_rep2)"},"process":"norm_bedgraphs","mem":{"mean":3018752,"min":3018752,"q1":3018752,"q2":3018752,"q3":3018752,"max":3018752,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Eric37_rep2)","q1Label":"norm_bedgraphs (Eric42_rep2)","q2Label":"norm_bedgraphs (Eric42_rep2)","q3Label":"norm_bedgraphs (Eric42_rep2)"},"memUsage":{"mean":0.01,"min":0.01,"q1":0.01,"q2":0.01,"q3":0.01,"max":0.01,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Eric37_rep2)","q1Label":"norm_bedgraphs (Eric42_rep2)","q2Label":"norm_bedgraphs (Eric42_rep2)","q3Label":"norm_bedgraphs (Eric42_rep2)"},"timeUsage":{"mean":2.54,"min":2.51,"q1":2.53,"q2":2.54,"q3":2.56,"max":2.58,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Eric37_rep2)","q1Label":"norm_bedgraphs (Eric42_rep2)","q2Label":"norm_bedgraphs (Eric42_rep2)","q3Label":"norm_bedgraphs (Eric42_rep2)"},"vmem":{"mean":141234176,"min":141234176,"q1":141234176,"q2":141234176,"q3":141234176,"max":141234176,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Eric37_rep2)","q1Label":"norm_bedgraphs (Eric42_rep2)","q2Label":"norm_bedgraphs (Eric42_rep2)","q3Label":"norm_bedgraphs (Eric42_rep2)"},"reads":{"mean":7300849840,"min":7172854620,"q1":7236852230,"q2":7300849840,"q3":7364847450,"max":7428845060,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Eric37_rep2)","q1Label":"norm_bedgraphs (Eric42_rep2)","q2Label":"norm_bedgraphs (Eric42_rep2)","q3Label":"norm_bedgraphs (Eric42_rep2)"},"cpu":{"mean":46,"min":45.5,"q1":45.75,"q2":46,"q3":46.25,"max":46.5,"minLabel":"norm_bedgraphs (Eric37_rep2)","maxLabel":"norm_bedgraphs (Eric42_rep2)","q1Label":"norm_bedgraphs (Eric37_rep2)","q2Label":"norm_bedgraphs (Eric37_rep2)","q3Label":"norm_bedgraphs (Eric37_rep2)"},"time":{"mean":366454,"min":361811,"q1":364132.5,"q2":366454,"q3":368775.5,"max":371097,"minLabel":"norm_bedgraphs (Eric42_rep2)","maxLabel":"norm_bedgraphs (Eric37_rep2)","q1Label":"norm_bedgraphs (Eric42_rep2)","q2Label":"norm_bedgraphs (Eric42_rep2)","q3Label":"norm_bedgraphs (Eric42_rep2)"},"writes":{"mean":16822,"min":16821,"q1":16821.5,"q2":16822,"q3":16822.5,"max":16823,"minLabel":"norm_bedgraphs (Eric37_rep2)","maxLabel":"norm_bedgraphs (Eric42_rep2)","q1Label":"norm_bedgraphs (Eric37_rep2)","q2Label":"norm_bedgraphs (Eric37_rep2)","q3Label":"norm_bedgraphs (Eric37_rep2)"}},{"cpuUsage":{"mean":120.3,"min":113.2,"q1":116.75,"q2":120.3,"q3":123.85,"max":127.4,"minLabel":"igvtools (Eric37_rep2)","maxLabel":"igvtools (Eric42_rep2)","q1Label":"igvtools (Eric37_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Eric37_rep2)"},"process":"igvtools","mem":{"mean":36003840,"min":35160064,"q1":35581952,"q2":36003840,"q3":36425728,"max":36847616,"minLabel":"igvtools (Eric37_rep2)","maxLabel":"igvtools (Eric42_rep2)","q1Label":"igvtools (Eric37_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Eric37_rep2)"},"memUsage":{"mean":0.11,"min":0.11,"q1":0.11,"q2":0.11,"q3":0.11,"max":0.11,"minLabel":"igvtools (Eric37_rep2)","maxLabel":"igvtools (Eric42_rep2)","q1Label":"igvtools (Eric37_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Eric37_rep2)"},"timeUsage":{"mean":0.02,"min":0.02,"q1":0.02,"q2":0.02,"q3":0.02,"max":0.02,"minLabel":"igvtools (Eric37_rep2)","maxLabel":"igvtools (Eric42_rep2)","q1Label":"igvtools (Eric37_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Eric37_rep2)"},"vmem":{"mean":8141520896,"min":8141520896,"q1":8141520896,"q2":8141520896,"q3":8141520896,"max":8141520896,"minLabel":"igvtools (Eric42_rep2)","maxLabel":"igvtools (Eric37_rep2)","q1Label":"igvtools (Eric42_rep2)","q2Label":"igvtools (Eric42_rep2)","q3Label":"igvtools (Eric42_rep2)"},"reads":{"mean":19758851,"min":19758851,"q1":19758851,"q2":19758851,"q3":19758851,"max":19758851,"minLabel":"igvtools (Eric42_rep2)","maxLabel":"igvtools (Eric37_rep2)","q1Label":"igvtools (Eric42_rep2)","q2Label":"igvtools (Eric42_rep2)","q3Label":"igvtools (Eric42_rep2)"},"cpu":{"mean":120.3,"min":113.2,"q1":116.75,"q2":120.3,"q3":123.85,"max":127.4,"minLabel":"igvtools (Eric37_rep2)","maxLabel":"igvtools (Eric42_rep2)","q1Label":"igvtools (Eric37_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Eric37_rep2)"},"time":{"mean":638,"min":610,"q1":624,"q2":638,"q3":652,"max":666,"minLabel":"igvtools (Eric37_rep2)","maxLabel":"igvtools (Eric42_rep2)","q1Label":"igvtools (Eric37_rep2)","q2Label":"igvtools (Eric37_rep2)","q3Label":"igvtools (Eric37_rep2)"},"writes":{"mean":3434,"min":3434,"q1":3434,"q2":3434,"q3":3434,"max":3434,"minLabel":"igvtools (Eric42_rep2)","maxLabel":"igvtools (Eric37_rep2)","q1Label":"igvtools (Eric42_rep2)","q2Label":"igvtools (Eric42_rep2)","q3Label":"igvtools (Eric42_rep2)"}},{"cpuUsage":null,"process":"normalized_bigwigs","mem":null,"memUsage":null,"timeUsage":null,"vmem":null,"reads":null,"cpu":null,"time":{"mean":8.5,"min":8,"q1":8.25,"q2":8.5,"q3":8.75,"max":9,"minLabel":"normalized_bigwigs (Eric37_rep2)","maxLabel":"normalized_bigwigs (Eric42_rep2)","q1Label":"normalized_bigwigs (Eric37_rep2)","q2Label":"normalized_bigwigs (Eric37_rep2)","q3Label":"normalized_bigwigs (Eric37_rep2)"},"writes":null},{"cpuUsage":null,"process":"bam_conversion_tfit","mem":null,"memUsage":null,"timeUsage":null,"vmem":null,"reads":null,"cpu":null,"time":null,"writes":null},{"cpuUsage":null,"process":"dreg_prep","mem":null,"memUsage":null,"timeUsage":null,"vmem":null,"reads":null,"cpu":null,"time":null,"writes":null}]
+Aug-30 16:45:38.036 [main] DEBUG nextflow.trace.TimelineObserver - Flow completing -- rendering html timeline
+Aug-30 16:45:38.228 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Aug-30 16:45:38.247 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
